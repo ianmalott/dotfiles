@@ -1,0 +1,31 @@
+defscrollback 1024
+startup_message off
+
+# Use xterm's title bar
+termcapinfo xterm*|rxvt*|kterm*|Eterm* 'hs:ts=\E]0;:fs=\007:ds=\E]0;\007'
+defhstatus "screen ^E ^Et | $USER@^EH"
+hardstatus off
+
+# Use C-a <spacebar> for windowlist
+bind ' ' windowlist -b 
+
+# Make ssh-agent work with screen
+#setenv SSH_AUTH_SOCK "$HOME/tmp/ssh-agent-$USER-screen"
+
+chdir $HOME/projects/platform/
+
+# Default windows 
+screen -t status 0
+  exec git status
+screen -t work 1
+screen -t log 2 tail -f log/development.log
+screen -t database 3 script/dbconsole -p
+screen -t console 4 script/console
+screen -t TODO 9 vim $HOME/documents/TODO
+
+# Prepare C-a C-a quick-change history
+select 0
+select 1
+
+# Confirm window kills with 'k', restore with 'r'
+zombie kr

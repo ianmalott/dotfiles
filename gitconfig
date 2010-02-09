@@ -1,0 +1,10 @@
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+	ui = auto
+[core]
+  editor = vim
+[user]
+	email = ian@scvngr.com
+	name = Ian Malott
