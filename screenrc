@@ -21,7 +21,7 @@ screen -t work 1
 screen -t log 2 tail -f log/development.log
 screen -t database 3 script/dbconsole -p
 screen -t console 4 script/console
-screen -t TODO 9 vim $HOME/documents/TODO
+screen -t TODO 9 vim $HOME/stuff/documents/TODO
 
 # Prepare C-a C-a quick-change history
 select 0
