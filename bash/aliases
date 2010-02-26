@@ -14,3 +14,13 @@ fi
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
+
+# Git
+alias g='git'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gco='git checkout'
+alias gdm='git diff master'
+alias gl='git log'
+alias gp='git pull'
+alias gs='git status'
