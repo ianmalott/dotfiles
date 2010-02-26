@@ -9,9 +9,9 @@ function parse_git_branch {
 
 # Terminal Prompt
 if [ "$color_prompt" = yes ]; then
-  PS1="\n${debian_chroot:+($debian_chroot)}\[$BLD_WHI\]\u\[$BLD_RED\]@\h \[$BLD_YEL\]\w\[$BLD_BLA\] \$(parse_git_branch) \n\[$BLD_BLA\]❯\[$RESET_TEXT\] "
+  PS1="\n\[$BLD_WHI\]\u\[$BLD_RED\]@\h \[$BLD_YEL\]\w\[$BLD_BLA\] \$(parse_git_branch) \n\[$BLD_BLA\]❯\[$RESET_TEXT\] "
 else
-  PS1="\n${debian_chroot:+($debian_chroot)}\u@\h \w \$(parse_git_branch) \n❯ "
+  PS1="\n\u@\h \w \$(parse_git_branch) \n❯ "
 fi
 unset color_prompt
 
