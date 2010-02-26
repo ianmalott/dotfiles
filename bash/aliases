@@ -24,3 +24,13 @@ alias gdm='git diff master'
 alias gl='git log'
 alias gp='git pull'
 alias gs='git status'
+
+# Config Management
+alias ealias='vim ~/.dotfiles/bash/aliases'
+alias salias='. ~/.dotfiles/bash/aliases'
+alias ebashconf='vim ~/.dotfiles/bash/config'
+alias sbashconf='. ~/.dotfiles/bash/config'
+alias ebashrc='vim ~/.dotfiles/bashrc'
+alias sbashrc='. ~/.dotfiles/bashrc'
+alias escreen='vim ~/.dotfiles/screenrc'
+alias evim='vim ~/.dotfiles/vimrc'
