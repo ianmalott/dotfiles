@@ -10,25 +10,6 @@ if [ -x /usr/bin/dircolors ]; then
   alias egrep='egrep --color=auto'
 fi
 
-# Some more ls aliases
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
-
-# Git
-alias g='git'
-alias gb='git branch'
-alias gba='git branch -a'
-alias gco='git checkout'
-alias gd='git diff'
-alias gdc='git diff --cached'
-alias gdm='git diff master'
-alias gdmc='git diff master --check'
-alias gdms='git diff master --stat'
-alias gl='git log'
-alias gp='git pull'
-alias gs='git status'
-
 # Config Management
 alias ealias='vim ~/.dotfiles/bash/aliases'
 alias salias='. ~/.dotfiles/bash/aliases'
@@ -38,3 +19,25 @@ alias ebashrc='vim ~/.dotfiles/bashrc'
 alias sbashrc='. ~/.dotfiles/bashrc'
 alias escreen='vim ~/.dotfiles/screenrc'
 alias evim='vim ~/.dotfiles/vimrc'
+
+# Git
+alias g='git'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gco='git checkout'
+alias gcom='git checkout master'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gdm='git diff master'
+alias gdmc='git diff master --check'
+alias gdms='git diff master --stat'
+alias gl='git log'
+alias gp='git pull'
+alias gs='git status'
+
+# Review
+alias ll="grep --exclude='*.swp' -rE '.{81}'"
+
+# Workflow
+alias poop="git checkout master && git pull && eat && rake db:migrate && mv tmp/platform_development_*.sql.gz ~/data/ && script/dbdump"
+alias eat="rake db:drop db:create && zcat tmp/platform_development_*.sql.gz | script/dbconsole -p"
