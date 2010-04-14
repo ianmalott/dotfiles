@@ -48,10 +48,10 @@ iab _DATE =strftime("%A, %B %e %Y %I:%M:%S %p %Z")
 """ Keyboard remapping
 """
 
-"map <c-k> <c-w>k " go one window up
-"map <c-j> <c-w>j " go one window down
-"map <c-h> :bp<cr>  " go to previous buffer
-"map <c-l> :bn<cr> " go to next buffer
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 "map <m-k> <c-w>k<c-w>_<c-w><bar> " go one window up and maximize it
 "map <m-j> <c-w>j<c-w>_<c-w><bar> " go one window down and maximize it
 "map <m-h> <c-w>h<c-w>_<c-w><bar> " go one window left and maximize it
