@@ -3,15 +3,10 @@
 """
 
 colors ir_black
-"colors elflord
-"colors synic
-"colors tango
-"colors wombat
-"colors fnaqevan
 
 filetype indent plugin on
 
-set backspace=indent,eol,start " backspace over these 
+set backspace=indent,eol,start " backspace over these
 set nocindent " c-style indenting
 set nocompatible  " enable vim specific commands
 set cursorline " highlight current line
@@ -19,19 +14,20 @@ set noeb " disable error bells
 set expandtab  " replace tabs with spaces
 set fileformat=unix  " use the unix fileformat
 set hidden " enable hidden files
-set history=100 " keep 100 lines of command line history
+set history=400 " keep 100 lines of command line history
 set hlsearch " highlight last search
 set ignorecase " case insensitive search; see smartcase below
 set incsearch " show partial searches real-time
 set laststatus=2
 set magic " enable advanced regular expression in searches
 set nonu  " set line numbering off
-"set ruler " show the cursor position in the bottom right corner
+set noruler " show the cursor position in the bottom right corner
 set shiftwidth=2 " number of spaces used with (auto)indention
 set showcmd  " display incomplete commands
-set showmatch " flash matching () {} [] 
+set showmatch " flash matching () {} []
 set smartcase " case insensitive except with initial capital
-"set smartindent
+set softtabstop=2
+set smartindent
 set statusline=%F%m%r%h%w\ \|\ %{&ff}\ \ %Y\ \ (%l,%v)\ \ %p%%
 set tabstop=2 " tab size
 set novb " don't blink the screen when there is an error
@@ -64,13 +60,29 @@ iab _DATE =strftime("%A, %B %e %Y %I:%M:%S %p %Z")
 map ,edit :sp $HOME/.vimrc<cr>  " open .vimrc in a split window
 map ,source :w<cr> :source $HOME/.vimrc<cr> " save and reload .vimrc
 
+" Press F5 to strip trailing whitespace
+nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 
 """
 """ Functions
 """
 
 function! ConvertDos()
-  execute ":%s/^M//g"
+  execute ":%s/^M//ge"
+endfunction
+
+function! <SID>StripTrailingWhitespaces()
+  " Save last search and cursor position
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+
+  " Strip trailing whitespace, suppressing no-match error
+  %s/\s\+$//e
+
+  " Restore
+  let @/=_s
+  call cursor(l, c)
 endfunction
 
 
@@ -79,9 +91,12 @@ endfunction
 """
 
 if has("autocmd")
-  autocmd BufRead,BufNewFile *.py set shiftwidth=4
-  autocmd BufRead,BufNewFile *.py set tabstop=4
-  autocmd BufRead,BufNewFile *.py set shiftwidth=2
-  autocmd BufRead,BufNewFile *.py set tabstop=2
-endif
+  " Whitespace preferences
+  autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
 
+  " Remove trailing whitespace on save
+  autocmd BufWritePre *.erb,*.js,*.py,*.rb :call <SID>StripTrailingWhitespaces()
+
+  " Treat .rss files as XML
+  autocmd BufNewFile,BufRead *.rss setfiletype xml
+endif
