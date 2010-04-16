@@ -94,9 +94,6 @@ if has("autocmd")
   " Whitespace preferences
   autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
 
-  " Remove trailing whitespace on save
-  autocmd BufWritePre *.erb,*.js,*.py,*.rb :call <SID>StripTrailingWhitespaces()
-
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
 endif
