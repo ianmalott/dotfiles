@@ -10,6 +10,9 @@ if [ -x /usr/bin/dircolors ]; then
   alias egrep='egrep --color=auto'
 fi
 
+# Bash
+alias c='clear'
+
 # Config Management
 alias ealias='vim ~/.dotfiles/bash/aliases'
 alias salias='. ~/.dotfiles/bash/aliases'
