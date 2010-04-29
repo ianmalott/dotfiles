@@ -25,6 +25,7 @@ alias evim='vim ~/.dotfiles/vimrc'
 
 # Git
 alias g='git'
+alias ga='git add'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gco='git checkout'
