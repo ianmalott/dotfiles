@@ -43,5 +43,5 @@ alias gs='git status'
 alias ll="grep --exclude='*.swp' -rE '.{81}'"
 
 # Workflow
-alias poop="git checkout master && git pull && eat && rake db:migrate && mv tmp/platform_development_*.sql.gz ~/data/ && script/dbdump"
-alias eat="rake db:drop db:create && zcat tmp/platform_development_*.sql.gz | script/dbconsole -p"
+alias eat="rake db:drop db:create && zcat tmp/platform_development_postgresql_*.sql.gz | script/dbconsole -p"
+alias poop="git checkout master && git pull && eat && rake db:migrate && mv tmp/platform_development_postgresql_*.sql.gz ~/data/ && script/dbdump"
