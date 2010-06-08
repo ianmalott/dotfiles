@@ -39,6 +39,7 @@ alias gf='git show --pretty="format:" --name-only'
 alias gl='git log'
 alias gp='git pull'
 alias gs='git status'
+alias gsh='git show HEAD'
 
 # Review
 alias ll="grep --exclude='*.swp' -rE '.{81}'"
