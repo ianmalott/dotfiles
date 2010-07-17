@@ -5,7 +5,9 @@ if [ -x /usr/bin/dircolors ]; then
   alias dir='dir --color=auto'
   alias vdir='vdir --color=auto'
 
-  alias grep='grep -n --color=auto'
+  alias grep='grep --color=auto'
+  alias grepn='grep -n --color=auto'
+  alias grepv='grep -v --color=auto'
   alias fgrep='fgrep --color=auto'
   alias egrep='egrep --color=auto'
 fi
@@ -40,10 +42,11 @@ alias gl='git log'
 alias gp='git pull'
 alias gs='git status'
 alias gsh='git show HEAD'
+alias gshs='git show HEAD --stat'
 
 # Review
-alias ll="grep --exclude='*.swp' -rE '.{81}'"
+alias ll="grepn --exclude='*.swp' --exclude='colorbox.js' -rE '.{81}'"
 
 # Workflow
-alias eat="rake db:drop db:create && zcat tmp/platform_development_postgresql_*.sql.gz | script/dbconsole -p"
-alias poop="git checkout master && git pull && eat && rake db:migrate && mv tmp/platform_development_postgresql_*.sql.gz ~/data/ && script/dbdump"
+alias eat="rake db:drop db:create && zcat tmp/platform_development_*.sql.gz | script/dbconsole -p"
+alias poop="git checkout master && git pull && eat && rake db:migrate && mv tmp/platform_development_*.sql.gz ~/data/ && script/dbdump"
