@@ -8,3 +8,5 @@
 [user]
 	email = ian@scvngr.com
 	name = Ian Malott
+[push]
+	default = tracking
