@@ -1,0 +1,12 @@
+# SCVNGR screen session
+
+chdir $HOME/projects/platform/
+
+# Default windows
+screen -t log 2 tail -f log/development.log
+screen -t database 3 script/dbconsole -p
+screen -t console 4 script/console
+screen -t TODO 9 vim $HOME/stuff/documents/TODO
+
+# Include defaults
+source $HOME/.dotfiles/screenrc
