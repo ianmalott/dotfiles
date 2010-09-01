@@ -63,6 +63,12 @@ map ,source :w<cr> :source $HOME/.vimrc<cr> " save and reload .vimrc
 " Press F5 to strip trailing whitespace
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 
+" Press F8 to toggle paste
+nnoremap <F8> :set invpaste paste?<CR>
+set pastetoggle=<F8>
+set showmode
+
+
 """
 """ Functions
 """
