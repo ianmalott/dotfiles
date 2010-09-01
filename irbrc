@@ -11,7 +11,7 @@ IRB.conf[:AUTO_INDENT] = true
 # Set custom prompt
 IRB.conf[:PROMPT] ||= {}
 IRB.conf[:PROMPT][:CUSTOM] = {
-  :PROMPT_I => "\n\e[1;33m>>\e[00m ",
+  :PROMPT_I => "\n>> ",
   :PROMPT_S => "* ",
   :PROMPT_C => "? ",
   :RETURN => "=> %s\n"
