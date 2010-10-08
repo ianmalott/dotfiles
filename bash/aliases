@@ -52,5 +52,6 @@ alias ll="grepn --exclude='*.swp' --exclude='colorbox.js' -rE '.{81}'"
 
 # Workflow
 alias scvngr="screen -S scvngr -R -c $HOME/.dotfiles/screen/scvngr"
+alias commonplace="screen -S commonplace -R -c $HOME/.dotfiles/screen/commonplace"
 alias eat="rake db:drop db:create && zcat tmp/platform_development_*.sql.gz | script/dbconsole -p"
 alias poop="git checkout master && git pull && eat && rake db:migrate && mv tmp/platform_development_*.sql.gz ~/data/ && script/dbdump"

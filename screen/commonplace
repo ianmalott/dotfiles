@@ -1,0 +1,11 @@
+# Commonplace screen session
+chdir $HOME/projects/commonplace/
+
+# Default windows
+screen -t log 2 script/server
+screen -t database 3 script/dbconsole
+screen -t console 4 script/console
+screen -t TODO 9 vim $HOME/TODO
+
+# Include defaults
+source $HOME/.dotfiles/screenrc
