@@ -12,19 +12,21 @@ if [ -x /usr/bin/dircolors ]; then
   alias egrep='egrep --color=auto'
 fi
 
-# Bash
-alias c='clear'
-
 # Config Management
+alias dotfiles='cd ~/.dotfiles'
 alias ealias='vim ~/.dotfiles/bash/aliases'
-alias salias='. ~/.dotfiles/bash/aliases'
 alias ebashconf='vim ~/.dotfiles/bash/config'
-alias sbashconf='. ~/.dotfiles/bash/config'
 alias ebashrc='vim ~/.dotfiles/bashrc'
-alias sbashrc='. ~/.dotfiles/bashrc'
 alias eirbrc='vim ~/.dotfiles/irbrc'
 alias escreen='vim ~/.dotfiles/screenrc'
 alias evim='vim ~/.dotfiles/vimrc'
+alias salias='. ~/.dotfiles/bash/aliases'
+alias sbashconf='. ~/.dotfiles/bash/config'
+alias sbashrc='. ~/.dotfiles/bashrc'
+
+# Db
+alias eat="rake db:drop db:create && zcat tmp/platform_development_*.sql.gz | script/dbconsole -p"
+alias poop="git checkout master && git pull && eat && rake db:migrate && mv tmp/platform_development_*.sql.gz ~/data/ && script/dbdump"
 
 # Git
 alias g='git'
@@ -47,11 +49,13 @@ alias gs='git status'
 alias gsh='git show HEAD'
 alias gshs='git show HEAD --stat'
 
+# Misc
+alias c='clear'
+alias h='cd $HOME'
+
 # Review
 alias ll="grepn --exclude='*.swp' --exclude='colorbox.js' -rE '.{81}'"
 
 # Workflow
 alias scvngr="screen -S scvngr -R -c $HOME/.dotfiles/screen/scvngr"
 alias commonplace="screen -S commonplace -R -c $HOME/.dotfiles/screen/commonplace"
-alias eat="rake db:drop db:create && zcat tmp/platform_development_*.sql.gz | script/dbconsole -p"
-alias poop="git checkout master && git pull && eat && rake db:migrate && mv tmp/platform_development_*.sql.gz ~/data/ && script/dbdump"
