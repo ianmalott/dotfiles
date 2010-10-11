@@ -53,9 +53,11 @@ alias gshs='git show HEAD --stat'
 alias c='clear'
 alias h='cd $HOME'
 
+# Project-specific screen sessions
+for project in commonplace finalclub platform; do
+  # cd triggers rvm after_cd hook, which sources project .rvmrc to switch ruby & gemset
+  alias $project="cd $HOME/projects/$project; screen -S $project -R -c $HOME/.dotfiles/screen/$project"
+done
+
 # Review
 alias ll="grepn --exclude='*.swp' --exclude='colorbox.js' -rE '.{81}'"
-
-# Workflow
-alias scvngr="screen -S scvngr -R -c $HOME/.dotfiles/screen/scvngr"
-alias commonplace="screen -S commonplace -R -c $HOME/.dotfiles/screen/commonplace"

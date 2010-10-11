@@ -1,0 +1,12 @@
+# Default windows
+screen -t status 0
+  exec git status
+screen -t work 1
+
+# Prepare C-a C-a quick-change history
+select 0
+select 1
+
+# Confirm window kills with 'k', restore with 'r'
+zombie kr
+

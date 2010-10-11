@@ -1,0 +1,13 @@
+defscrollback 2048
+startup_message off
+
+# Use xterm's title bar
+termcapinfo xterm*|rxvt*|kterm*|Eterm* 'hs:ts=\E]0;:fs=\007:ds=\E]0;\007'
+defhstatus "screen ^E ^Et | $USER@^EH"
+hardstatus off
+
+# Use C-a <spacebar> for windowlist
+bind ' ' windowlist -b
+
+# Make ssh-agent work with screen
+#setenv SSH_AUTH_SOCK "$HOME/tmp/ssh-agent-$USER-screen"
