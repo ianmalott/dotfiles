@@ -43,8 +43,8 @@ alias gsh='git show HEAD'
 alias gshs='git show HEAD --stat'
 
 # Project-specific screen sessions
-for project in commonplace finalclub platform; do
-  # cd triggers rvm after_cd hook, which sources project .rvmrc to switch ruby & gemset
+for project in levelup scvngr; do
+  # cd triggers rvm after_cd hook, which sources project .rvmrc to switch ruby/gemset & export PROJECT
   alias $project="cd $HOME/projects/$project; screen -S $project -R -c $HOME/.dotfiles/screen/$project"
 done
 

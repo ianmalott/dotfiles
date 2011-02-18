@@ -1,0 +1,10 @@
+source $HOME/.dotfiles/screen/before
+
+screen -t log 2 tail -f log/development.log
+screen -t database 3 script/dbconsole -p
+screen -t console 4 script/console
+screen -t server 5 bash
+  exec script/server
+screen -t TODO 9 vim $HOME/projects/TODO-$PROJECT
+
+source $HOME/.dotfiles/screen/after
