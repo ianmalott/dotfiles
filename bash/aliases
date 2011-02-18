@@ -59,5 +59,9 @@ for project in commonplace finalclub platform; do
   alias $project="cd $HOME/projects/$project; screen -S $project -R -c $HOME/.dotfiles/screen/$project"
 done
 
+# Rake
+alias rtf='rake test:functionals'
+alias rtu='rake test:units'
+
 # Review
 alias ll="grepn --exclude='*.swp' --exclude='colorbox.js' -rE '.{81}'"
