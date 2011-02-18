@@ -1,16 +1,9 @@
-# Enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-  eval "`dircolors -b`"
-  alias ls='ls --color=auto'
-  alias dir='dir --color=auto'
-  alias vdir='vdir --color=auto'
-
-  alias grep='grep --color=auto'
-  alias grepn='grep -n --color=auto'
-  alias grepv='grep -v --color=auto'
-  alias fgrep='fgrep --color=auto'
-  alias egrep='egrep --color=auto'
-fi
+# Aliases
+alias grep='grep --color=auto'
+alias grepn='grep -n'
+alias grepv='grep -v'
+alias c='clear'
+alias h='cd $HOME'
 
 # Config Management
 alias dotfiles='cd ~/.dotfiles'
@@ -18,8 +11,8 @@ alias ealias='vim ~/.dotfiles/bash/aliases'
 alias ebashconf='vim ~/.dotfiles/bash/config'
 alias ebashrc='vim ~/.dotfiles/bashrc'
 alias eirbrc='vim ~/.dotfiles/irbrc'
-alias escreen='vim ~/.dotfiles/screenrc'
-alias evim='vim ~/.dotfiles/vimrc'
+alias escreenrc='vim ~/.dotfiles/screenrc'
+alias evimrc='vim ~/.dotfiles/vimrc'
 alias salias='. ~/.dotfiles/bash/aliases'
 alias sbashconf='. ~/.dotfiles/bash/config'
 alias sbashrc='. ~/.dotfiles/bashrc'
@@ -48,10 +41,6 @@ alias gp='git pull'
 alias gs='git status'
 alias gsh='git show HEAD'
 alias gshs='git show HEAD --stat'
-
-# Misc
-alias c='clear'
-alias h='cd $HOME'
 
 # Project-specific screen sessions
 for project in commonplace finalclub platform; do
