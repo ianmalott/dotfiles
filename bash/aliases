@@ -18,8 +18,8 @@ alias sbashconf='. ~/.dotfiles/bash/config'
 alias sbashrc='. ~/.dotfiles/bashrc'
 
 # Db
-alias eat="rake db:drop db:create && zcat tmp/platform_development_*.sql.gz | script/dbconsole -p"
-alias poop="git checkout master && git pull && eat && rake db:migrate && mv tmp/platform_development_*.sql.gz ~/data/ && script/dbdump"
+alias eat="rake db:drop db:create && gzcat tmp/$PROJECT_development_*.sql.gz | script/dbconsole -p"
+alias poop="gcom && gp && eat && rake db:migrate && mv tmp/$PROJECT_development_*.sql.gz ~/data/ && script/dbdump"
 
 # Git
 alias g='git'
