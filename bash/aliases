@@ -4,6 +4,8 @@ alias grepn='grep -n'
 alias grepv='grep -v'
 alias c='clear'
 alias h='cd $HOME'
+alias ipe='ipconfig getifaddr en0'
+alias ipw='ipconfig getifaddr en1'
 
 # Config Management
 alias dotfiles='cd ~/.dotfiles'
