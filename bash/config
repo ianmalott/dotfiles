@@ -1,52 +1,17 @@
 #!/bin/bash
 
-# Include color variables
-. ~/.dotfiles/bash/colors
+# Path
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
-function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
-}
+# Editor
+export EDITOR=/usr/bin/vim
 
-# Terminal Prompt
-if [ "$color_prompt" = yes ]; then
-  PS1="\n\[$BLD_WHI\]\u\[$BLD_RED\]@\h \[$BLD_YEL\]\w\[$BLD_BLA\] \$(parse_git_branch) \n\[$BLD_BLA\]❯\[$RESET_TEXT\] "
-else
-  PS1="\n\u@\h \w \$(parse_git_branch) \n❯ "
-fi
-unset color_prompt
+# Git
+source ~/.git-completion.bash
+export GIT_PS1_SHOWDIRTYSTATE=true
 
-# Window Title
-case "$TERM" in
-  xterm*|rxvt*)
-    PS1="\[\e]0;\u@\h: \w  \$(parse_git_branch)\a\]$PS1";;
-  *)
-    ;;
-esac
+# Prompt
+PS1="\n\[$BLD_WHI\]\u\[$BLD_RED\]@\h \[$BLD_YEL\]\w\[$BLD_BLA\] \$(__git_ps1 "%s") \n❯\[$DEFAULT\] "
 
-# enable programmable completion features
-if [ -f /etc/bash_completion ]; then
-  . /etc/bash_completion
-fi
-
-
-#-------------------------------------------------------------------------------
-# The following are useful for remote accounts
-#-------------------------------------------------------------------------------
-
-#SSHAGENT=/usr/bin/ssh-agent
-#SSHAGENTARGS="-s"
-#if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
-#  eval `$SSHAGENT $SSHAGENTARGS`
-#  trap "kill $SSH_AGENT_PID" 0
-#fi
-
-## Prompt to cache private key password for session
-#echo -en "\033[34m"
-#read -p "Add private key to ssh-agent? (y/n): "
-#echo -en "\033[0m"
-#[ "$REPLY" == "y" ] && ssh-add ~/.ssh/id_rsa
-
-## Symlink ssh auth sock for screen
-#if [ -n $SSH_AUTH_SOCK ]; then
-#  ln -sf "$SSH_AUTH_SOCK" "$HOME/tmp/ssh-agent-$USER-screen"
-#fi
+# RVM (must be last)
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

@@ -1,7 +1,8 @@
 # Colors
-RESET_TEXT='\e[00m'    # Text Reset
+DEFAULT='\e[00m'   # Default
 
-REG_BLA='\e[0;30m' # Black - Regular
+# Regular
+REG_BLA='\e[0;30m' # Black
 REG_RED='\e[0;31m' # Red
 REG_GRE='\e[0;32m' # Green
 REG_YEL='\e[0;33m' # Yellow
@@ -10,7 +11,8 @@ REG_PUR='\e[0;35m' # Purple
 REG_CYA='\e[0;36m' # Cyan
 REG_WHI='\e[0;37m' # White
 
-BLD_BLA='\e[1;30m' # Black - Bold
+# Bold
+BLD_BLA='\e[1;30m' # Black
 BLD_RED='\e[1;31m' # Red
 BLD_GRE='\e[1;32m' # Green
 BLD_YEL='\e[1;33m' # Yellow
@@ -19,7 +21,8 @@ BLD_PUR='\e[1;35m' # Purple
 BLD_CYA='\e[1;36m' # Cyan
 BLD_WHI='\e[1;37m' # White
 
-UND_BLA='\e[4;30m' # Black - Underline
+# Underline
+UND_BLA='\e[4;30m' # Black
 UND_RED='\e[4;31m' # Red
 UND_GRE='\e[4;32m' # Green
 UND_YEL='\e[4;33m' # Yellow
@@ -28,7 +31,8 @@ UND_PUR='\e[4;35m' # Purple
 UND_CYA='\e[4;36m' # Cyan
 UND_WHI='\e[4;37m' # White
 
-BKG_BLA='\e[40m'   # Black - Background
+# Background
+BKG_BLA='\e[40m'   # Black
 BKG_RED='\e[41m'   # Red
 BKG_GRE='\e[42m'   # Green
 BKG_YEL='\e[43m'   # Yellow
@@ -36,4 +40,3 @@ BKG_BLU='\e[44m'   # Blue
 BKG_PUR='\e[45m'   # Purple
 BKG_CYA='\e[46m'   # Cyan
 BKG_WHI='\e[47m'   # White
-
