@@ -21,4 +21,17 @@ if ENV.include?('RAILS_ENV')
     require 'logger'
     RAILS_DEFAULT_LOGGER = Logger.new(STDOUT)
   end
+
+  # Enable FactoryGirl
+  require 'factory_girl'
+  require 'faker'
+
+  class Factory
+    def image_attachment
+      filename = "deal_#{rand(3)}.jpg"
+      File.new File.join(Rails.root, 'test', 'fixtures', 'files', filename)
+    end
+  end
+
+  Factory.find_definitions
 end
