@@ -1,9 +1,9 @@
-defscrollback 2048
+defscrollback 4096
 startup_message off
 
 # Use xterm's title bar
 termcapinfo xterm*|rxvt*|kterm*|Eterm* 'hs:ts=\E]0;:fs=\007:ds=\E]0;\007'
-defhstatus "screen ^E ^Et | $USER@^EH"
+defhstatus "terminal ^E ^Et | $USER@^EH"
 hardstatus off
 
 # Use C-a <spacebar> for windowlist
