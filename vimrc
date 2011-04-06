@@ -29,6 +29,7 @@ set smartcase " case insensitive except with initial capital
 set softtabstop=2
 set smartindent
 set statusline=%F%m%r%h%w\ \|\ %{&ff}\ \ %Y\ \ (%l,%v)\ \ %p%%
+set tabpagemax=15 " max number of tabs
 set tabstop=2 " tab size
 set novb " don't blink the screen when there is an error
 set wildmenu
