@@ -6,6 +6,21 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # Editor
 export EDITOR=/usr/bin/vim
 
+# Functions
+function vg {
+  if [ $# -ge 2 ]; then
+    local matching_files=$(grep -rl "$@")
+
+    if [ "$matching_files" ]; then
+      vim -p +/"$1" $matching_files
+    else
+      echo 'No matches found.'
+    fi
+  else
+    echo 'Usage: vg <pattern> <path> [<path>...]'
+  fi
+}
+
 # Git
 source ~/.git-completion.bash
 export GIT_PS1_SHOWDIRTYSTATE=true
