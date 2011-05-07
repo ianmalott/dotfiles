@@ -1,18 +1,17 @@
+set nocompatible " enable vim specific commands
+
 """
 """ Options
 """
 
-colors ir_black
-
-filetype indent plugin on
-
+let mapleader=',' " change mapleader from \ to ,
 set backspace=indent,eol,start " backspace over these
+set nobackup
 set nocindent " c-style indenting
-set nocompatible  " enable vim specific commands
 set cursorline " highlight current line
 set noeb " disable error bells
-set expandtab  " replace tabs with spaces
-set fileformat=unix  " use the unix fileformat
+set expandtab " replace tabs with spaces
+set fileformat=unix " use the unix fileformat
 set hidden " enable hidden files
 set history=400 " keep 100 lines of command line history
 set hlsearch " highlight last search
@@ -20,20 +19,23 @@ set ignorecase " case insensitive search; see smartcase below
 set incsearch " show partial searches real-time
 set laststatus=2
 set magic " enable advanced regular expression in searches
-set nonu  " set line numbering off
+set nonu " set line numbering off
 set noruler " show the cursor position in the bottom right corner
 set shiftwidth=2 " number of spaces used with (auto)indention
-set showcmd  " display incomplete commands
+set showcmd " display incomplete commands
 set showmatch " flash matching () {} []
 set smartcase " case insensitive except with initial capital
 set softtabstop=2
 set smartindent
 set statusline=%F%m%r%h%w\ \|\ %{&ff}\ \ %Y\ \ (%l,%v)\ \ %p%%
+set noswapfile
 set tabpagemax=15 " max number of tabs
 set tabstop=2 " tab size
 set novb " don't blink the screen when there is an error
 set wildmenu
 
+colors ir_black
+filetype indent plugin on " enable detection, plugins, and indenting
 syn on " automatic syntax hilighting
 
 
@@ -49,17 +51,22 @@ iab _DATE =strftime("%A, %B %e %Y %I:%M:%S %p %Z")
 """ Keyboard remapping
 """
 
+" Easier window navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-"map <m-k> <c-w>k<c-w>_<c-w><bar> " go one window up and maximize it
-"map <m-j> <c-w>j<c-w>_<c-w><bar> " go one window down and maximize it
-"map <m-h> <c-w>h<c-w>_<c-w><bar> " go one window left and maximize it
-"map <m-l> <c-w>l<c-w>_<c-w><bar> " go one window right and maximize it
 
-map ,edit :vsp $HOME/.vimrc<cr>  " open .vimrc in a split window
-map ,source :w<cr> :source $HOME/.vimrc<cr> " save and reload .vimrc
+" Remap j and k to work with wrapped lines
+nnoremap j gj
+nnoremap k gk
+
+" Turn off search highlighting more easily
+nmap <silent> ,/ :nohlsearch<CR>
+
+" Easy vimrc management
+map <leader>edit :vsp $HOME/.vimrc<cr>  " open .vimrc in a split window
+map <leader>source :w<cr> :source $HOME/.vimrc<cr> " save and reload .vimrc
 
 " Press F5 to strip trailing whitespace
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
@@ -68,6 +75,9 @@ nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 nnoremap <F8> :set invpaste paste?<CR>
 set pastetoggle=<F8>
 set showmode
+
+" Save with sudo
+cmap w!! w !sudo tee % >/dev/null
 
 " Search for visually selected text, forwards or backwards
 vnoremap <silent> * :<C-U>
