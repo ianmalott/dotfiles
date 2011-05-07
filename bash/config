@@ -26,7 +26,7 @@ source ~/.git-completion.bash
 export GIT_PS1_SHOWDIRTYSTATE=true
 
 # Prompt
-PS1="\n\[$BLD_WHI\]\u\[$BLD_RED\]@\h \[$BLD_YEL\]\w\[$BLD_BLA\] \$(__git_ps1 "%s") \n❯\[$DEFAULT\] "
+PS1="\n\[$BLD_WHI\]\u\[$REG_BLU\]@\h \[$REG_YEL\]\w\[$BLD_GRE\] \$(__git_ps1 "%s") \n❯\[$DEFAULT\] "
 
 # RVM (must be last)
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
