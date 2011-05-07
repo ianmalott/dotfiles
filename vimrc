@@ -44,7 +44,7 @@ set tabstop=2 " tab size
 set novb " don't blink the screen when there is an error
 set wildmenu
 
-colorscheme mustang
+colorscheme vividchalk
 syn on " automatic syntax hilighting
 
 
