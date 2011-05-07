@@ -28,7 +28,7 @@ if ENV.include?('RAILS_ENV')
 
   class Factory
     def image_attachment
-      filename = "deal_#{rand(3)}.jpg"
+      filename = 'pixel.png'
       File.new File.join(Rails.root, 'test', 'fixtures', 'files', filename)
     end
   end
