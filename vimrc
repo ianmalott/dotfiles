@@ -1,6 +1,16 @@
 set nocompatible " enable vim specific commands
 
 """
+""" Pathogen
+"""
+
+filetype off " force reloading after pathogen loaded
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+filetype indent plugin on " enable detection, plugins, and indenting
+
+
+"""
 """ Options
 """
 
@@ -35,7 +45,6 @@ set novb " don't blink the screen when there is an error
 set wildmenu
 
 colors ir_black
-filetype indent plugin on " enable detection, plugins, and indenting
 syn on " automatic syntax hilighting
 
 
