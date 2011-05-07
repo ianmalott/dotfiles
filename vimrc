@@ -15,6 +15,7 @@ filetype indent plugin on " enable detection, plugins, and indenting
 """
 
 let mapleader=',' " change mapleader from \ to ,
+set background=dark
 set backspace=indent,eol,start " backspace over these
 set nobackup
 set nocindent " c-style indenting
@@ -44,7 +45,7 @@ set tabstop=2 " tab size
 set novb " don't blink the screen when there is an error
 set wildmenu
 
-colorscheme vividchalk
+colorscheme solarized
 syn on " automatic syntax hilighting
 
 
