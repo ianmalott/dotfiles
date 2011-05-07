@@ -45,8 +45,16 @@ set tabstop=2 " tab size
 set novb " don't blink the screen when there is an error
 set wildmenu
 
+
+"""
+""" Colors
+"""
+
 colorscheme solarized
 syn on " automatic syntax hilighting
+hi statusline ctermbg=green ctermfg=black cterm=none
+hi statuslinenc ctermbg=black ctermfg=green cterm=none
+hi vertsplit ctermbg=black ctermfg=black cterm=none
 
 
 """
