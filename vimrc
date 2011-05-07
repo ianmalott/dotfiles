@@ -58,7 +58,7 @@ map <C-l> <C-w>l
 "map <m-h> <c-w>h<c-w>_<c-w><bar> " go one window left and maximize it
 "map <m-l> <c-w>l<c-w>_<c-w><bar> " go one window right and maximize it
 
-map ,edit :sp $HOME/.vimrc<cr>  " open .vimrc in a split window
+map ,edit :vsp $HOME/.vimrc<cr>  " open .vimrc in a split window
 map ,source :w<cr> :source $HOME/.vimrc<cr> " save and reload .vimrc
 
 " Press F5 to strip trailing whitespace
