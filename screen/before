@@ -6,6 +6,9 @@ termcapinfo xterm*|rxvt*|kterm*|Eterm* 'hs:ts=\E]0;:fs=\007:ds=\E]0;\007'
 defhstatus "terminal ^E ^Et | $USER@^EH"
 hardstatus off
 
+# Enable 256 colors
+term 'xterm-256color'
+
 # Use C-a <spacebar> for windowlist
 bind ' ' windowlist -b
 
