@@ -6,8 +6,6 @@ A = H.values
 
 # Rails
 if ENV.include?('RAILS_ENV')
-  require 'factory_girl'
-  require 'faker'
   require 'logger'
 
   # Log SQL to STDOUT
@@ -15,22 +13,33 @@ if ENV.include?('RAILS_ENV')
     RAILS_DEFAULT_LOGGER = Logger.new(STDOUT)
   end
 
-  # Enable FactoryGirl
-  class Factory
-    def image_attachment
-      filename = 'pixel.png'
-      File.new File.join(Rails.root, 'test', 'fixtures', 'files', filename)
+  if 'levelup' == ENV['PROJECT']
+    require 'factory_girl'
+    require 'faker'
+
+    # Enable FactoryGirl
+    class Factory
+      def image_attachment
+        filename = 'pixel.png'
+        File.new File.join(Rails.root, 'test', 'fixtures', 'files', filename)
+      end
     end
-  end
 
-  Factory.find_definitions
+    Factory.find_definitions
 
-  def add_package(division = nil)
-    d = division || Division.first || Factory(:division)
-    p = Factory(:package, :division => d)
+    def ian
+      email = 'ian@thelevelup.com'
 
-    (1..3).each do |n|
-      Factory :deal, :level => n, :package => p
+      @ian ||= User.find_by_email(email) || User.create(
+        :first_name                => 'Ian',
+        :last_name                 => 'Malott',
+        :email                     => email,
+        :division_id               => 1,
+        :new_password              => 'foo',
+        :new_password_confirmation => 'foo',
+        :born_at                   => Date.parse('02/12/1987'),
+        :gender                    => 'male'
+      )
     end
   end
 end
