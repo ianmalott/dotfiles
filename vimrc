@@ -7,7 +7,17 @@ set nocompatible " enable vim specific commands
 filetype off " force reloading after pathogen loaded
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
-filetype indent plugin on " enable detection, plugins, and indenting
+
+if has('autocmd')
+  filetype indent plugin on " enable detection, plugins, and indenting
+endif
+
+
+"""
+""" Plugins
+"""
+
+runtime macros/matchit.vim
 
 
 """
