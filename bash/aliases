@@ -46,6 +46,10 @@ alias gs='git status'
 alias gsh='git show HEAD'
 alias gshs='git show HEAD --stat'
 
+# Completion
+complete -o bashdefault -o default -o nospace -F _git_checkout gco
+complete -o bashdefault -o default -o nospace -F _git_diff gd
+
 # Project-specific screen sessions
 for project in levelup scvngr; do
   # cd triggers rvm after_cd hook, which sources project .rvmrc to switch ruby/gemset & export PROJECT
