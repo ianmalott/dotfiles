@@ -1,12 +1,10 @@
 [color]
-	branch = auto
-	diff = auto
-	status = auto
-	ui = auto
+  ui = auto
 [core]
   editor = vim
-[user]
-	email = ian@scvngr.com
-	name = Ian Malott
+  excludesfile = ~/.gitignore
 [push]
-	default = tracking
+  default = tracking
+[user]
+  name = Ian Malott
+  email = ian.malott@gmail.com
