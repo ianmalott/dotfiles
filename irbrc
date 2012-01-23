@@ -14,19 +14,6 @@ if ENV.include?('RAILS_ENV')
   end
 
   if 'levelup' == ENV['PROJECT']
-    require 'factory_girl'
-    require 'faker'
-
-    # Enable FactoryGirl
-    class Factory
-      def image_attachment
-        filename = 'pixel.png'
-        File.new File.join(Rails.root, 'test', 'fixtures', 'files', filename)
-      end
-    end
-
-    Factory.find_definitions
-
     def ian
       email = 'ian@thelevelup.com'
 
