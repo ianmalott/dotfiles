@@ -1,16 +1,22 @@
 set nocompatible " enable vim specific commands
 
+
 """
-""" Pathogen
+""" Vundle
 """
 
-filetype off " force reloading after pathogen loaded
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-if has('autocmd')
-  filetype indent plugin on " enable detection, plugins, and indenting
-endif
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'gmarik/vundle'
+Bundle 'kana/vim-textobj-user'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-rails'
+
+filetype plugin indent on " required
 
 
 """
