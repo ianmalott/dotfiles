@@ -21,10 +21,6 @@ alias salias='. ~/.dotfiles/bash/aliases'
 alias sbashconf='. ~/.dotfiles/bash/config'
 alias sbashrc='. ~/.dotfiles/bashrc'
 
-# Db
-alias eat="rake db:drop db:create && gzcat tmp/$PROJECT_development_*.sql.gz | script/dbconsole -p"
-alias poop="gcom && gp && eat && rake db:migrate && mv tmp/$PROJECT_development_*.sql.gz ~/data/ && script/dbdump"
-
 # Git
 alias g='git'
 alias ga='git add'
@@ -64,6 +60,3 @@ done
 alias rtf='rake test:functionals'
 alias rtn='ruby -Itest'
 alias rtu='rake test:units'
-
-# Review
-alias ll="grepn --exclude='*.swp' --exclude='colorbox.js' -rE '.{81}'"
