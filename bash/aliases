@@ -60,8 +60,9 @@ for project in levelup scvngr; do
   alias $project="cd $HOME/projects/$project; screen -S $project -R -c $HOME/.dotfiles/screen/$project"
 done
 
-# Rake
+# Testing
 alias rtf='rake test:functionals'
+alias rtn='ruby -Itest'
 alias rtu='rake test:units'
 
 # Review
