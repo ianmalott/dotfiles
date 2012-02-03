@@ -23,32 +23,6 @@ alias sbashrc='. ~/.dotfiles/bashrc'
 
 # Git
 alias g='git'
-alias ga='git add'
-alias gb='git branch'
-alias gba='git branch -a'
-alias gback='git checkout @{-1}'
-alias gcb='echo $(__git_ps1 "%s")'
-alias gco='git checkout'
-alias gcom='git checkout master'
-alias gd='git diff'
-alias gdc='git diff --cached'
-alias gdm='git diff master'
-alias gdmc='git diff master --check'
-alias gdms='git diff master --stat'
-alias gdno='git diff --name-only'
-alias gf='git fetch'
-alias gl='git log'
-alias glo='git log --oneline --decorate'
-alias gp='git pull'
-alias gs='git status'
-alias gsh='git show HEAD'
-alias gshs='git show HEAD --stat'
-alias gsno='git show --pretty="format:" --name-only'
-alias gtouch='git commit --amend --date `isodate`'
-
-# Completion
-complete -o bashdefault -o default -o nospace -F _git_checkout gco
-complete -o bashdefault -o default -o nospace -F _git_diff gd
 
 # Project-specific screen sessions
 for project in levelup scvngr; do
