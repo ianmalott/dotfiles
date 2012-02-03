@@ -82,7 +82,7 @@ iab _DATE =strftime("%A, %B %e %Y %I:%M:%S %p %Z")
 
 
 """
-""" Keyboard remapping
+""" Keyboard mapping
 """
 
 " Easier window navigation
@@ -91,7 +91,7 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" Remap j and k to work with wrapped lines
+" Map j and k to work with wrapped lines
 nnoremap j gj
 nnoremap k gk
 
@@ -101,6 +101,9 @@ nmap <silent> ,/ :nohlsearch<CR>
 " Easy vimrc management
 map <leader>edit :vsp $HOME/.vimrc<cr>  " open .vimrc in a split window
 map <leader>source :w<cr> :source $HOME/.vimrc<cr> " save and reload .vimrc
+
+" Code review shortcut for screen
+nnoremap <leader>review :call <SID>ReviewFile()<CR>
 
 " Press F5 to strip trailing whitespace
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
@@ -132,6 +135,11 @@ vnoremap <silent> # :<C-U>
 
 function! ConvertDos()
   execute ":%s/^M//ge"
+endfunction
+
+function! <SID>ReviewFile()
+  :silent !screen -S $PROJECT -p 1 -X stuff 'vim <cfile>'
+  :silent !screen -S $PROJECT -p 0 -X stuff 'git diff master <cfile>'
 endfunction
 
 function! <SID>StripTrailingWhitespaces()
