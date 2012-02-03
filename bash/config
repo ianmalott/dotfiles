@@ -1,12 +1,16 @@
 #!/bin/bash
 
-# Path
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+#
+# Environment
+#
 
-# Editor
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export EDITOR=/usr/bin/vim
 
+#
 # Functions
+#
+
 function vg {
   if [ $# -ge 2 ]; then
     local matching_files=$(grep -rl "$@")
@@ -21,12 +25,20 @@ function vg {
   fi
 }
 
+#
 # Git
-source ~/.git-completion.bash
-export GIT_PS1_SHOWDIRTYSTATE=true
+#
 
+source ~/.git-completion.bash
+GIT_PS1_SHOWDIRTYSTATE=true
+
+#
 # Prompt
+#
+
 PS1="\n\[$BLD_WHI\]\u\[$REG_RED\]@\[$REG_BLU\]\h \[$REG_CYA\]\w\[$BLD_GRE\] \$(__git_ps1 "%s")\n❯\[$DEFAULT\] "
 
+#
 # RVM (must be last)
+#
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
