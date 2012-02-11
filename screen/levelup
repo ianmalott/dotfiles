@@ -5,6 +5,6 @@ screen -t database 3 script/dbconsole -p
 screen -t console 4 script/console
 screen -t server 5 bash
   exec thin start
-screen -t TODO 9 vim $HOME/projects/TODO-$PROJECT
+screen -t TODO 9 vim $HOME/projects/TODO
 
 source $HOME/.dotfiles/screen/after
