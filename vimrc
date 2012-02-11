@@ -105,6 +105,9 @@ map <leader>source :w<cr> :source $HOME/.vimrc<cr> " save and reload .vimrc
 " Code review shortcut for screen
 nnoremap <leader>review :call <SID>ReviewFile()<CR>
 
+" Search for lines over 80 columns
+nnoremap <leader>ll /.\{80\}.\+<CR>
+
 " Press F5 to strip trailing whitespace
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 
