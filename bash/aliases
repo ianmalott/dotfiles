@@ -24,12 +24,6 @@ alias sbashrc='. ~/.dotfiles/bashrc'
 # Git
 alias g='git'
 
-# Project-specific screen sessions
-for project in levelup scvngr; do
-  # cd triggers rvm after_cd hook, which sources project .rvmrc to switch ruby/gemset & export PROJECT
-  alias $project="cd $HOME/projects/$project; screen -S $project -R -c $HOME/.dotfiles/screen/$project"
-done
-
 # Testing
 alias rtf='rake test:functionals'
 alias rtn='ruby -Itest'
