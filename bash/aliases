@@ -27,5 +27,4 @@ alias g='git'
 
 # Testing
 alias rtf='rake test:functionals'
-alias rtn='ruby -Itest'
 alias rtu='rake test:units'
