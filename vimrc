@@ -35,7 +35,7 @@ set background=dark
 set backspace=indent,eol,start " backspace over these
 set nobackup
 set nocindent " c-style indenting
-set cursorline " highlight current line
+set nocursorline " highlight current line
 set noeb " disable error bells
 set expandtab " replace tabs with spaces
 set fileformat=unix " use the unix fileformat
@@ -46,8 +46,9 @@ set ignorecase " case insensitive search; see smartcase below
 set incsearch " show partial searches real-time
 set laststatus=2
 set magic " enable advanced regular expression in searches
-set nonu " set line numbering off
+set rnu " set line numbering off
 set noruler " show the cursor position in the bottom right corner
+set numberwidth=2 " characters allotted for line numbers
 set shiftwidth=2 " number of spaces used with (auto)indention
 set showcmd " display incomplete commands
 set showmatch " flash matching () {} []
@@ -107,6 +108,9 @@ nnoremap <leader>review :call <SID>ReviewFile()<CR>
 
 " Search for lines over 80 columns
 nnoremap <leader>ll /.\{80\}.\+<CR>
+
+" Open TODO topic heading
+nnoremap <leader>th O<ESC>80i-<ESC>o<ESC>78i`<ESC>O
 
 " Press F5 to strip trailing whitespace
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
