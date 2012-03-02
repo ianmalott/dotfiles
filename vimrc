@@ -112,13 +112,13 @@ nnoremap <leader>ll /.\{80\}.\+<CR>
 " Open TODO topic heading
 nnoremap <leader>th O<ESC>80i-<ESC>o<ESC>78i`<ESC>O
 
+" Toggle paste
+nnoremap <leader>paste :set invpaste paste?<CR>
+set pastetoggle=<leader>paste
+set showmode
+
 " Press F5 to strip trailing whitespace
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
-
-" Press F8 to toggle paste
-nnoremap <F8> :set invpaste paste?<CR>
-set pastetoggle=<F8>
-set showmode
 
 " Save with sudo
 cmap w!! w !sudo tee % >/dev/null
