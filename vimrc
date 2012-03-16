@@ -40,7 +40,7 @@ set noeb " disable error bells
 set expandtab " replace tabs with spaces
 set fileformat=unix " use the unix fileformat
 set hidden " enable hidden files
-set history=400 " keep 100 lines of command line history
+set history=1000 " length of command line history
 set hlsearch " highlight last search
 set ignorecase " case insensitive search; see smartcase below
 set incsearch " show partial searches real-time
