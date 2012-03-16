@@ -118,8 +118,8 @@ nnoremap <leader>paste :set invpaste paste?<CR>
 set pastetoggle=<leader>paste
 set showmode
 
-" Press F5 to strip trailing whitespace
-nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
+" Strip trailing whitespace
+nnoremap <leader>rstrip :call <SID>StripTrailingWhitespaces()<CR>
 
 " Save with sudo
 cmap w!! w !sudo tee % >/dev/null
