@@ -118,6 +118,9 @@ nnoremap <leader>paste :set invpaste paste?<CR>
 set pastetoggle=<leader>paste
 set showmode
 
+" Toggle relative line numbers
+nnoremap <leader>rnu :set invrnu<CR>
+
 " Strip trailing whitespace
 nnoremap <leader>rstrip :call <SID>StripTrailingWhitespaces()<CR>
 
