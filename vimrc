@@ -150,7 +150,7 @@ endfunction
 
 function! <SID>ReviewFile()
   :silent !screen -S $PROJECT -p 1 -X stuff 'vim <cfile>'
-  :silent !screen -S $PROJECT -p 0 -X stuff 'git diff master <cfile>'
+  :silent !screen -S $PROJECT -p 0 -X stuff 'git diff master...head <cfile>'
 endfunction
 
 function! <SID>StripTrailingWhitespaces()
