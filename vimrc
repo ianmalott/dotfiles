@@ -60,7 +60,8 @@ set noswapfile
 set tabpagemax=15 " max number of tabs
 set tabstop=2 " tab size
 set novb " don't blink the screen when there is an error
-set wildmenu
+set wildmenu " display options for tab completion in command mode
+set wildmode=list:longest " tab completion up to point of ambiguity
 
 
 """
