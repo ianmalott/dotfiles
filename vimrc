@@ -35,7 +35,7 @@ set background=dark
 set backspace=indent,eol,start " backspace over these
 set nobackup
 set nocindent " c-style indenting
-set nocursorline " highlight current line
+set cursorline " highlight current line
 set noeb " disable error bells
 set expandtab " replace tabs with spaces
 set fileformat=unix " use the unix fileformat
