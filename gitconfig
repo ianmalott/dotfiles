@@ -13,6 +13,7 @@
   dstat = diff --stat
   dno = diff --name-only
   f = fetch
+  files = diff --name-only master...head
   l = log
   l1 = log -1
   lb = log --oneline master..
