@@ -3,6 +3,7 @@
   amend = commit --amend
   b = branch
   ba = branch -a
+  br = branch -r
   back = checkout -
   cm = commit
   co = checkout
