@@ -30,3 +30,15 @@ alias g='git'
 alias bake='bundle exec rake'
 alias rtf='rake test:functionals'
 alias rtu='rake test:units'
+
+# Heroku staging
+alias hsc='heroku console --app levelup-staging'
+alias hsl='heroku logs --tail --app levelup-staging'
+alias hsp='watch heroku ps --app levelup-staging'
+alias hsr='heroku releases --app levelup-staging'
+
+# Heroku production
+alias hpc='heroku console --app levelup-production'
+alias hpl='heroku logs --tail --app levelup-production'
+alias hpp='watch heroku ps --app levelup-production'
+alias hpr='heroku releases --app levelup-production'
