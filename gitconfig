@@ -10,11 +10,12 @@
   com = checkout master
   d = diff
   dc = diff --check
+  dno = diff --name-only
   ds = diff --staged
   dstat = diff --stat
-  dno = diff --name-only
   f = fetch
   files = diff --name-only master...head
+  filescp = !git diff --name-only master...head | pbcopy
   l = log
   l1 = log -1
   lb = log --oneline master..
