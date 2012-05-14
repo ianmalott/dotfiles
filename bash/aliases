@@ -1,5 +1,6 @@
 # General
-alias grep='grep --color=auto'
+alias gr='grep -rn'
+alias grep='grep -I --color'
 alias grepn='grep -n'
 alias grepv='grep -v'
 alias c='clear'
