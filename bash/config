@@ -59,7 +59,7 @@ complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null || complete 
 # Prompt
 #
 
-PS1="\n\[$BLD_WHI\]\u\[$REG_RED\]@\[$REG_BLU\]\h \[$REG_CYA\]\w\[$BLD_GRE\] \$(__git_ps1 "%s")\n❯\[$DEFAULT\] "
+PS1="\n$BLD_WHI\u$REG_RED@$REG_BLU\h $REG_CYA\w$BLD_GRE \$(__git_ps1 "%s")\n❯$DEFAULT "
 
 #
 # RVM (must be last)
