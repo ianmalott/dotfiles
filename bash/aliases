@@ -31,6 +31,14 @@ alias bake='bundle exec rake'
 alias rtf='rake test:functionals'
 alias rtu='rake test:units'
 
+# Databases
+alias db-backup-production='heroku pgbackups:capture --app levelup-production'
+alias db-download-backup='curl -o tmp/levelup-production-$(date "+%Y%m%d").dump `heroku pgbackups:url --app levelup-production`'
+alias db-pending-migrations='rake db:abort_if_pending_migrations'
+alias db-reset-staging='heroku pg:reset DATABASE --app levelup-staging'
+alias db-restore-production-backup-to-development='rake db:drop db:create; pg_restore --verbose --clean --no-acl --no-owner -d levelup_development `ls -1 tmp/levelup-production-* | tail -1`'
+alias db-restore-production-backup-to-staging='heroku pgbackups:restore DATABASE `heroku pgbackups:url --app levelup-production` --app levelup-staging'
+
 # Heroku staging
 alias hsc='heroku console --app levelup-staging'
 alias hsl='heroku logs --tail --app levelup-staging'
