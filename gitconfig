@@ -31,6 +31,9 @@
   unstage = reset HEAD
 [color]
   ui = auto
+[color "diff"]
+  meta = blue
+  frag = cyan
 [core]
   excludesfile = ~/.gitignore
 [push]
