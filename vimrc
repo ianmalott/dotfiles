@@ -105,7 +105,9 @@ nmap <silent> ,/ :nohlsearch<CR>
 map <leader>edit :vsp $HOME/.vimrc<cr>  " open .vimrc in a split window
 map <leader>source :w<cr> :source $HOME/.vimrc<cr> " save and reload .vimrc
 
-" Code review shortcut for screen
+" Code review shortcuts for screen
+nnoremap <leader>diff :call <SID>DiffFile()<CR>
+nnoremap <leader>open :call <SID>OpenFile()<CR>
 nnoremap <leader>review :call <SID>ReviewFile()<CR>
 
 " Search for lines over 80 columns
@@ -147,6 +149,14 @@ vnoremap <silent> # :<C-U>
 
 function! ConvertDos()
   execute ":%s/^M//ge"
+endfunction
+
+function! <SID>DiffFile()
+  :silent !screen -S $PROJECT -p 0 -X stuff 'git diff master...head <cfile>'
+endfunction
+
+function! <SID>OpenFile()
+  :silent !screen -S $PROJECT -p 1 -X stuff 'vim <cfile>'
 endfunction
 
 function! <SID>ReviewFile()
