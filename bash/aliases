@@ -1,4 +1,5 @@
 # General
+alias b='bundle exec'
 alias gr='grep -rn'
 alias grep='grep -I --color'
 alias grepn='grep -n'
