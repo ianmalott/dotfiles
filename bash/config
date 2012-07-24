@@ -50,7 +50,9 @@ unset project
 #
 
 source ~/.git-completion.bash
-GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWDIRTYSTATE=true # unstaged (*), staged (+)
+GIT_PS1_SHOWSTASHSTATE=true # stashed ($)
+GIT_PS1_SHOWUNTRACKEDFILES=true # untracked (%)
 
 # Enable completion for 'g'
 complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null || complete -o default -o nospace -F _git g
