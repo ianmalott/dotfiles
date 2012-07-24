@@ -35,7 +35,7 @@ function vg {
 }
 
 # Project-specific screen sessions
-for project in levelup scvngr; do
+for project in levelup payments scvngr; do
   eval "
     function $project () {
       cd ~/projects/$project # trigger rvm after_cd hook
