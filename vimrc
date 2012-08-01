@@ -12,6 +12,7 @@ call vundle#rc()
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'gmarik/vundle'
 Bundle 'kana/vim-textobj-user'
+Bundle 'kchmck/vim-coffee-script'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-rails'
