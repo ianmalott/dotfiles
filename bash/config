@@ -6,11 +6,30 @@
 
 export EDITOR=/usr/bin/vim
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PROJECTS_PATH=$HOME/projects
 export TERM=xterm-256color
 
 #
 # Functions
 #
+
+# Project-specific screen sessions
+function s {
+  local project=$1
+  local screenrc=$PROJECTS_PATH/$project/.screenrc
+
+  if [ -z $project ]; then
+    echo "Please specify a project."
+    echo "Usage: s <project>"
+  elif [ ! -d $(dirname $screenrc) ]; then
+    echo "Project '$project' does not exist."
+  elif [ -f $screenrc ]; then
+    cd $(dirname $screenrc) # trigger rvm after_cd hook
+    screen -dRRS $project -c $screenrc
+  else
+    echo "Project '$project' is missing a screenrc."
+  fi
+}
 
 # Run tests matching pattern in file
 # Usage: t <filename> <pattern>
@@ -33,17 +52,6 @@ function vg {
     echo 'Usage: vg <pattern> <path> [<path>...]'
   fi
 }
-
-# Project-specific screen sessions
-for project in levelup payments scvngr; do
-  eval "
-    function $project () {
-      cd ~/projects/$project # trigger rvm after_cd hook
-      screen -dRRS $project -c ~/.dotfiles/screen/$project
-    }
-  "
-done
-unset project
 
 #
 # Git
