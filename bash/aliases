@@ -8,7 +8,7 @@ alias c='clear'
 alias ipe='ipconfig getifaddr en0'
 alias ipw='ipconfig getifaddr en1'
 alias isodate='date "+%Y-%m-%dT%H:%M:%S"'
-alias ls='ls -G'
+alias ls='ls -Gp'
 alias todo='vim -p ~/projects/{NOTES,TODO,DONE}'
 
 # Config Management
