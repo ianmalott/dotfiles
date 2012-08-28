@@ -18,7 +18,9 @@ function s {
   local project=$1
   local screenrc=$PROJECTS_PATH/$project/.screenrc
 
-  if [ -z $project ]; then
+  if [ $1 == 'ls' ]; then
+    screen -ls
+  elif [ -z $project ]; then
     echo "Please specify a project."
     echo "Usage: s <project>"
   elif [ ! -d $(dirname $screenrc) ]; then
