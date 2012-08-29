@@ -18,7 +18,9 @@ function s {
   local project=$1
   local screenrc=$PROJECTS_PATH/$project/.screenrc
 
-  if [ $1 == 'ls' ]; then
+  if [ $1 == 'd' ]; then
+    screen -d
+  elif [ $1 == 'ls' ]; then
     screen -ls
   elif [ -z $project ]; then
     echo "Please specify a project."
