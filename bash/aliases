@@ -34,12 +34,12 @@ alias rtp='rake parallel:prepare && rake test:parallel_with_specs'
 alias rtu='rake test:units'
 
 # Databases
-alias db-backup-production='heroku pgbackups:capture --app levelup-production-cedar'
-alias db-download-backup='curl -o tmp/levelup-production-cedar-$(date "+%Y%m%d").dump `heroku pgbackups:url --app levelup-production-cedar`'
+alias db-backup-production='heroku pgbackups:capture --app levelup-production'
+alias db-download-backup='curl -o tmp/levelup-production-$(date "+%Y%m%d").dump `heroku pgbackups:url --app levelup-production`'
 alias db-pending-migrations='rake db:abort_if_pending_migrations'
 alias db-reset-staging='heroku pg:reset DATABASE --app levelup-staging'
-alias db-restore-production-backup-to-development='rake db:drop db:create; pg_restore --verbose --clean --no-acl --no-owner -d levelup_development `ls -1 tmp/levelup-production-cedar-* | tail -1`'
-alias db-restore-production-backup-to-staging='heroku pgbackups:restore DATABASE `heroku pgbackups:url --app levelup-production-cedar` --app levelup-staging'
+alias db-restore-production-backup-to-development='rake db:drop db:create; pg_restore --verbose --clean --no-acl --no-owner -d levelup_development `ls -1 tmp/levelup-production-* | tail -1`'
+alias db-restore-production-backup-to-staging='heroku pgbackups:restore DATABASE `heroku pgbackups:url --app levelup-production` --app levelup-staging'
 
 # Heroku staging
 alias hsc='heroku run console --app levelup-staging'
@@ -48,7 +48,7 @@ alias hsp='watch heroku ps --app levelup-staging'
 alias hsr='heroku releases --app levelup-staging'
 
 # Heroku production
-alias hpc='heroku run console --app levelup-production-cedar'
-alias hpl='heroku logs --tail --app levelup-production-cedar'
-alias hpp='watch heroku ps --app levelup-production-cedar'
-alias hpr='heroku releases --app levelup-production-cedar'
+alias hpc='heroku run console --app levelup-production'
+alias hpl='heroku logs --tail --app levelup-production'
+alias hpp='watch heroku ps --app levelup-production'
+alias hpr='heroku releases --app levelup-production'
