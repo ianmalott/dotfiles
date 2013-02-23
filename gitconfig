@@ -16,6 +16,7 @@
   f = fetch
   files = diff --name-only master...head
   filescp = !git diff --name-only master...head | pbcopy
+  head = log -1
   l = log
   l1 = log -1
   lb = log --oneline master..
