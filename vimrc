@@ -51,6 +51,7 @@ set magic " enable advanced regular expression in searches
 set rnu " set line numbering off
 set noruler " show the cursor position in the bottom right corner
 set numberwidth=2 " characters allotted for line numbers
+set shiftround " round indent to multiple of 'shiftwidth'
 set shiftwidth=2 " number of spaces used with (auto)indention
 set showcmd " display incomplete commands
 set showmatch " flash matching () {} []
