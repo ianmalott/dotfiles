@@ -9,6 +9,7 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Bundle 'airblade/vim-gitgutter'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'gmarik/vundle'
 Bundle 'kana/vim-textobj-user'
