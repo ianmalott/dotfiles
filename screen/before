@@ -1,4 +1,4 @@
-defscrollback 4096
+defscrollback 10000
 startup_message off
 
 # Use xterm's title bar
