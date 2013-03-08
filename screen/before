@@ -12,7 +12,4 @@ term 'xterm-256color'
 # Use C-a <spacebar> for windowlist
 bind ' ' windowlist -b
 
-# Make ssh-agent work with screen
-#setenv SSH_AUTH_SOCK "$HOME/tmp/ssh-agent-$USER-screen"
-
 chdir $HOME/projects/$PROJECT/
