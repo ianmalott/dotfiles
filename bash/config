@@ -43,6 +43,14 @@ function t {
   ruby -Itest $filename -n "/$@/"
 }
 
+# Run tests of multiple files
+# Usage: tm <filename> <filename>
+function tm {
+  for filename in "$@"; do
+    t $filename
+  done
+}
+
 function vg {
   if [ $# -ge 2 ]; then
     local matching_files=$(grep -rl "$@")
