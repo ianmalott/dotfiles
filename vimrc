@@ -32,7 +32,7 @@ runtime macros/matchit.vim
 """ Options
 """
 
-let mapleader=' ' " change mapleader from \ to <space>
+let mapleader='\' " use default leader
 let g:rails_ctags_arguments = "`gem env gemdir`/gems --exclude=tmp"
 set background=dark
 set backspace=indent,eol,start " backspace over these
