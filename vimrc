@@ -154,16 +154,16 @@ function! ConvertDos()
 endfunction
 
 function! <SID>DiffFile()
-  :silent !screen -S $PROJECT -p 0 -X stuff 'git diff master...head <cfile>'
+  :silent !screen -p 0 -X stuff 'git diff master...head <cfile>'
 endfunction
 
 function! <SID>OpenFile()
-  :silent !screen -S $PROJECT -p 1 -X stuff 'vim <cfile>'
+  :silent !screen -p 1 -X stuff 'vim <cfile>'
 endfunction
 
 function! <SID>ReviewFile()
-  :silent !screen -S $PROJECT -p 1 -X stuff 'vim <cfile>'
-  :silent !screen -S $PROJECT -p 0 -X stuff 'git diff master...head <cfile>'
+  :silent !screen -p 1 -X stuff 'vim <cfile>'
+  :silent !screen -p 0 -X stuff 'git diff master...head <cfile>'
 endfunction
 
 function! <SID>StripTrailingWhitespaces()

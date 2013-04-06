@@ -11,5 +11,3 @@ term 'xterm-256color'
 
 # Use C-a <spacebar> for windowlist
 bind ' ' windowlist -b
-
-chdir $HOME/projects/$PROJECT/

@@ -15,7 +15,7 @@ function s {
   elif [ ! -d $(dirname $screenrc) ]; then
     echo "Project '$project' does not exist."
   elif [ -f $screenrc ]; then
-    cd $(dirname $screenrc) # trigger rvm after_cd hook
+    cd $(dirname $screenrc)
     screen -dRRS $project -c $screenrc
   else
     echo "Project '$project' is missing a screenrc."
