@@ -22,6 +22,14 @@ function s {
   fi
 }
 
+# Completion for s function
+function _s {
+  local current="${COMP_WORDS[COMP_CWORD]}"
+  local options=$(cd ~/projects ; ls -d */. | sed 's|/./||')
+  COMPREPLY=($(compgen -W "${options}" -- ${current}))
+}
+complete -F _s s
+
 # Run tests matching pattern in ruby file
 # Usage: t <filename> <pattern>
 function t {
