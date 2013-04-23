@@ -191,4 +191,7 @@ if has("autocmd")
 
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
+
+  " Treat RABL files as Ruby
+  autocmd Bufenter *.rabl setfiletype ruby
 endif
