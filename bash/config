@@ -13,7 +13,7 @@ export TERM=xterm-256color
 # Git
 #
 
-source ~/.git-completion.bash
+source ~/.dotfiles/bash/git-completion
 GIT_PS1_SHOWDIRTYSTATE=true # unstaged (*), staged (+)
 GIT_PS1_SHOWSTASHSTATE=true # stashed ($)
 GIT_PS1_SHOWUNTRACKEDFILES=true # untracked (%)
