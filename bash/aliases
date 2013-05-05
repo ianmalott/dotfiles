@@ -34,7 +34,7 @@ alias rtp='bake parallel:prepare && bake test:parallel_with_specs'
 alias rtu='bake test:units'
 
 # Databases
-alias db-backup-production='heroku pgbackups:capture --app levelup-production'
+alias db-backup-production='heroku pgbackups:capture --expire HEROKU_POSTGRESQL_WHITE_URL --app levelup-production'
 alias db-download-backup='curl -o tmp/levelup-production-$(date "+%Y%m%d").dump `heroku pgbackups:url --app levelup-production`'
 alias db-pending-migrations='bake db:abort_if_pending_migrations'
 alias db-reset-staging='heroku pg:reset DATABASE --app levelup-staging'
