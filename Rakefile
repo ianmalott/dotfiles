@@ -27,18 +27,18 @@ task :install do
       if File.identical?(dotfile.source, dotfile.target)
         puts "Identical #{dotfile.target} exists"
       elsif replace_all
-        dotfile.create_symlink_in_home_dir overwrite: true
+        dotfile.symlink_target_to_source overwrite: true
       else
         print "Overwrite #{dotfile.target}? [ynaq] "
         case $stdin.gets.chomp
-        when 'a' then replace_all = true; dotfile.create_symlink_in_home_dir overwrite: true
-        when 'y' then dotfile.create_symlink_in_home_dir overwrite: true
+        when 'a' then replace_all = true; dotfile.symlink_target_to_source overwrite: true
+        when 'y' then dotfile.symlink_target_to_source overwrite: true
         when 'q' then exit
         else puts "Skipping #{dotfile.target}"
         end
       end
     else
-      dotfile.create_symlink_in_home_dir
+      dotfile.symlink_target_to_source
     end
   end
 end
@@ -68,7 +68,7 @@ class Dotfile
     filenames_with_symlink_suffix.map { |filename| Dotfile.new filename }
   end
 
-  def create_symlink_in_home_dir(options = {})
+  def symlink_target_to_source(options = {})
     if options[:overwrite]
       puts "Removing existing #{target}"
       FileUtils.rm_rf target
