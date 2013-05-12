@@ -4,7 +4,7 @@ require 'rake'
 # Overview
 #
 #   This rake task automates dotfile symlinking.
-#   It looks for dotfiles in the pwd that end in .symlink.
+#   It extracts the names of dotfiles from Linkfile.
 #   It then creates symlinks in the home directory that point to those dotfiles.
 #
 # Usage
@@ -22,10 +22,10 @@ desc 'Install dotfiles into home directory'
 task :install do
   replace_all = false
 
-  Dotfile.marked_for_symlinking.each do |dotfile|
-    if File.exist?(dotfile.target)
+  Dotfile.chosen_for_symlinking.each do |dotfile|
+    if File.symlink?(dotfile.target)
       if File.identical?(dotfile.source, dotfile.target)
-        puts "Identical #{dotfile.target} exists"
+        puts "Desired symlink already exists (#{dotfile.target} -> #{dotfile.source})"
       elsif replace_all
         dotfile.symlink_target_to_source overwrite: true
       else
@@ -37,6 +37,8 @@ task :install do
         else puts "Skipping #{dotfile.target}"
         end
       end
+    elsif File.exist?(dotfile.target)
+      puts "Not symlinking #{dotfile.target} -> #{dotfile.source}; #{dotfile.target} exists and is not a symlink"
     else
       dotfile.symlink_target_to_source
     end
@@ -45,40 +47,42 @@ end
 
 desc 'Uninstall dotfiles from home directory'
 task :uninstall do
-  Dotfile.marked_for_symlinking.each do |dotfile|
-    if File.exist?(dotfile.target)
+  Dotfile.chosen_for_symlinking.each do |dotfile|
+    if File.symlink?(dotfile.target)
       puts "Removing #{dotfile.target}"
       File.delete dotfile.target
+    elsif File.exist?(dotfile.target)
+      puts "Not removing #{dotfile.target}; it is not a symlink"
+    else
+      puts "No file to remove at #{dotfile.target}"
     end
   end
 end
 
 class Dotfile
-  SYMLINK_SUFFIX = '.symlink'
-
-  attr_reader :basename, :source
+  attr_reader :source, :target
 
   def initialize(source)
-    @basename = File.basename(source, SYMLINK_SUFFIX)
-    @source = source
+    @source = "#{Dir.pwd}/#{source}"
+    @target = "#{Dir.home}/.#{source}"
   end
 
-  def self.marked_for_symlinking
-    filenames_with_symlink_suffix = Dir.glob("#{Dir.pwd}/*#{SYMLINK_SUFFIX}")
-    filenames_with_symlink_suffix.map { |filename| Dotfile.new filename }
+  def self.chosen_for_symlinking
+    IO.readlines('Linkfile').map { |line| Dotfile.new line.chomp }
   end
 
   def symlink_target_to_source(options = {})
-    if options[:overwrite]
-      puts "Removing existing #{target}"
-      FileUtils.rm_rf target
+    if File.exist?(source)
+      if File.exist?(target) || File.symlink?(target) && options[:overwrite]
+        puts "Overwriting existing #{target} and linking to #{source}"
+        FileUtils.rm_rf target
+      else
+        puts "Linking #{target} -> #{source}"
+      end
+
+      File.symlink source, target
+    else
+      puts "Cannot link to missing source: #{source}"
     end
-
-    puts "Linking #{target} -> #{source}"
-    File.symlink source, target
-  end
-
-  def target
-    "#{Dir.home}/.#{basename}"
   end
 end
