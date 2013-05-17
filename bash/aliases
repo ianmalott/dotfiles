@@ -15,6 +15,7 @@ alias todo='vim -p ~/projects/{NOTES,TODO,DONE}'
 alias dotfiles='cd ~/.dotfiles'
 alias ealias='vim ~/.dotfiles/bash/aliases'
 alias ebashconf='vim ~/.dotfiles/bash/config'
+alias ebashfunc='vim ~/.dotfiles/bash/functions'
 alias ebashrc='vim ~/.dotfiles/bashrc'
 alias egitconf="vim ~/.dotfiles/gitconfig -c 'setfiletype gitconfig'"
 alias eirbrc='vim ~/.dotfiles/irbrc'
