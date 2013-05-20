@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+function open_texts () {
+  local collection=$1
+  local collection_dir=$TEXTS_DIR/$collection
+  local default_files="$TEXTS_DIR/global.txt"
+  local files=''
+
+  if [ -z "$collection" ]; then
+    files=$default_files
+  elif [[ -d $collection_dir && "$(ls $collection_dir)" ]]; then
+    files="$default_files $collection_dir/*"
+  else
+    echo "Text files for collection '$collection' not found."
+  fi
+
+  if [ -n "$files" ]; then
+    vim -p $files
+  fi
+}
+
+open_texts $1
+unset open_texts

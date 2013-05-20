@@ -3,7 +3,7 @@
 # Project-specific screen sessions
 function s {
   local project=$1
-  local screenrc=$PROJECTS_PATH/$project/.screenrc
+  local screenrc=$PROJECTS_DIR/$project/.screenrc
 
   if [ "$1" == 'd' ]; then
     screen -d
