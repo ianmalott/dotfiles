@@ -2,6 +2,5 @@
 .bundle
 .ruby-gemset
 .ruby-version
-.rvmrc
 .screenrc
 doc/tags
