@@ -1,22 +1,45 @@
 #!/usr/bin/env bash
 
+# Overview
+#
+#   This script offers simple management of text files.
+#   A single synced directory contains children "collection" directories.
+#   The `txt` command opens existing collections or starts new ones.
+#
+# Usage
+#
+#   txt                            # open default text files
+#   txt <existing collection>      # open default and collection text files
+#   txt <non-existent collection>  # start and open new collection, or abort
+#
 function open_texts () {
   local collection=$1
   local collection_dir=$TEXTS_DIR/$collection
   local default_files="$TEXTS_DIR/global.txt"
-  local files=''
+  local files=$default_files
 
   if [ -z "$collection" ]; then
-    files=$default_files
+    break
   elif [[ -d $collection_dir && "$(ls $collection_dir)" ]]; then
-    files="$default_files $collection_dir/*"
+    files="$files $collection_dir/*"
   else
     echo "Text files for collection '$collection' not found."
+    echo -n "Start a new collection named '$collection'? y/n: "
+    read response
+
+    if [ $response = 'y' ]; then
+      echo -n "Enter name of new text file (without .txt): "
+      read filename
+      if [ ! -d $collection_dir ]; then mkdir $collection_dir; fi
+      touch "$collection_dir/$filename.txt"
+      files="$files $collection_dir/*"
+    else
+      echo "Not opening text files."
+      return 1
+    fi
   fi
 
-  if [ -n "$files" ]; then
-    vim -p $files
-  fi
+  vim -p $files
 }
 
 open_texts $1
