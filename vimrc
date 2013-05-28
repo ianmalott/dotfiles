@@ -133,6 +133,9 @@ nnoremap <leader>rstrip :call <SID>StripTrailingWhitespaces()<CR>
 " Save with sudo
 cmap w!! w !sudo tee % >/dev/null
 
+" Ignore lingering <shift> when writing a buffer to file
+cmap W w
+
 " Search for visually selected text, forwards or backwards
 vnoremap <silent> * :<C-U>
   \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
