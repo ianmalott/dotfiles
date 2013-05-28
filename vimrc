@@ -104,7 +104,8 @@ nnoremap k gk
 nmap <silent> <leader>/ :nohlsearch<CR>
 
 " Easy vimrc management
-map <leader>edit :vsp $HOME/.vimrc<cr>  " open .vimrc in a split window
+map <leader>rc :e $HOME/.vimrc<cr>  " edit .vimrc
+map <leader>vrc :vsp $HOME/.vimrc<cr>  " open .vimrc in a split window
 map <leader>source :w<cr> :source $HOME/.vimrc<cr> " save and reload .vimrc
 
 " Code review shortcuts for screen
