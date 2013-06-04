@@ -28,7 +28,7 @@
   sh = show
   shno = show --pretty='format:' --name-only
   shstat = show --stat
-  touch = commit --amend --date `isodate`
+  touch = !git commit --amend --date $(isodate)
   unstage = reset HEAD
 [color]
   ui = auto
