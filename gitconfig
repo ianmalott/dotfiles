@@ -30,6 +30,7 @@
   shstat = show --stat
   touch = !git commit --amend --date $(isodate)
   unstage = reset HEAD
+  upstream = !git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD)
 [color]
   ui = auto
 [color "diff"]
