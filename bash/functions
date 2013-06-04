@@ -46,9 +46,10 @@ function tm {
   done
 }
 
-function vg {
-  if [ $# -ge 2 ]; then
-    local matching_files=$(grep -rl "$@")
+# Vim + Ag: open files containing a match and highlight those matches
+function vag {
+  if [ $# -ge 1 ]; then
+    local matching_files=$(ag -l "$@")
 
     if [ "$matching_files" ]; then
       vim -p +/"$1" $matching_files
@@ -56,6 +57,6 @@ function vg {
       echo 'No matches found.'
     fi
   else
-    echo 'Usage: vg <pattern> <path> [<path>...]'
+    echo 'Usage: vag <pattern> [<path>...]'
   fi
 }
