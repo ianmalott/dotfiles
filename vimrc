@@ -83,7 +83,7 @@ hi vertsplit ctermbg=black ctermfg=black cterm=none
 """
 
 iab _NAME Ian Si Malott
-iab _DATE =strftime("%A, %B %e %Y %I:%M:%S %p %Z")
+iab <expr> _DATE strftime("%Y-%m-%d")
 
 
 """
