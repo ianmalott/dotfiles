@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo 'Sourcing ~/.bash_profile'
 
 #

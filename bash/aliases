@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # General
 alias b='bundle exec'
 alias gr='grep -rn'

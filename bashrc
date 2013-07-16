@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Abort unless running interactively.
 if [ -n "$PS1" ]; then
   echo "Sourcing ~/.bashrc"
