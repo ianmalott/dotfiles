@@ -1,16 +1,6 @@
 #!/bin/bash
 
 #
-# Environment
-#
-
-export EDITOR=/usr/bin/vim
-export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.bin:$PATH
-export PROJECTS_DIR=$HOME/projects
-export TERM=xterm-256color
-export TEXTS_DIR=$HOME/texts
-
-#
 # Git
 #
 
