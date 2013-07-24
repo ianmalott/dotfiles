@@ -32,7 +32,7 @@ alias g='git'
 # Testing
 alias bake='bundle exec rake'
 alias rtf='bake test:functionals'
-alias rtp='bake parallel:prepare && bake test:parallel_with_specs'
+alias rtp='bake parallel:prepare && bake parallel:test parallel:spec'
 alias rtu='bake test:units'
 
 # Databases
