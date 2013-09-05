@@ -38,6 +38,8 @@
   frag = cyan
 [core]
   excludesfile = ~/.gitignore
+[diff]
+  tool = vimdiff
 [push]
   default = upstream
 [user]
