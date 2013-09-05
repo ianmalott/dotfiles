@@ -18,6 +18,7 @@ Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-repeat'
 
 filetype plugin indent on " required
 
