@@ -45,6 +45,7 @@ set background=dark
 set backspace=indent,eol,start " backspace over these
 set nobackup
 set nocindent " c-style indenting
+set clipboard=unnamed " enable clipboard integration with Mac OS X
 set cursorline " highlight current line
 set noeb " disable error bells
 set expandtab " replace tabs with spaces
