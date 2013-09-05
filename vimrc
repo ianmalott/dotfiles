@@ -15,6 +15,7 @@ Bundle 'kana/vim-textobj-user'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-rails'
 
