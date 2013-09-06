@@ -115,6 +115,9 @@ nnoremap k gk
 " Turn off search highlighting more easily
 nmap <silent> <leader>/ :nohlsearch<CR>
 
+" Yank path of current file
+nnoremap <silent> <leader>yfp :let @+=expand("%")<CR>
+
 " Easy vimrc management
 map <leader>rc :e $HOME/.vimrc<cr>  " edit .vimrc
 map <leader>vrc :vsp $HOME/.vimrc<cr>  " open .vimrc in a split window
