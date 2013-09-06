@@ -63,10 +63,12 @@ set magic " enable advanced regular expression in searches
 set rnu " set line numbering off
 set noruler " show the cursor position in the bottom right corner
 set numberwidth=2 " characters allotted for line numbers
+set pastetoggle=<leader>paste " specify key sequence for toggling 'paste' option
 set shiftround " round indent to multiple of 'shiftwidth'
 set shiftwidth=2 " number of spaces used with (auto)indention
 set showcmd " display incomplete commands
 set showmatch " flash matching () {} []
+set showmode " display current mode
 set smartcase " case insensitive except with initial capital
 set softtabstop=2
 set smartindent
@@ -102,26 +104,32 @@ iab <expr> _DATE strftime("%Y-%m-%d")
 """ Keyboard mapping
 """
 
+" Save with sudo
+cmap w!! w !sudo tee % >/dev/null
+
+" Ignore lingering <shift> when writing a buffer to file
+cmap W w
+
 " Easier window navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" Map j and k to work with wrapped lines
-nnoremap j gj
-nnoremap k gk
-
-" Turn off search highlighting more easily
-nmap <silent> <leader>/ :nohlsearch<CR>
-
-" Yank path of current file
-nnoremap <silent> <leader>yfp :let @+=expand("%")<CR>
-
 " Easy vimrc management
 map <leader>rc :e $HOME/.vimrc<cr>  " edit .vimrc
 map <leader>vrc :vsp $HOME/.vimrc<cr>  " open .vimrc in a split window
 map <leader>source :w<cr> :source $HOME/.vimrc<cr> " save and reload .vimrc
+
+" Turn off search highlighting more easily
+nmap <silent> <leader>/ :nohlsearch<CR>
+
+" Map j and k to work with wrapped lines
+nnoremap j gj
+nnoremap k gk
+
+" Yank path of current file
+nnoremap <silent> <leader>yfp :let @+=expand("%")<CR>
 
 " Code review shortcuts for screen
 nnoremap <leader>diff :call <SID>DiffFile()<CR>
@@ -136,27 +144,22 @@ nnoremap <leader>th O<ESC>80i-<ESC>o<ESC>78i`<ESC>O
 
 " Toggle paste
 nnoremap <leader>paste :set invpaste paste?<CR>
-set pastetoggle=<leader>paste
-set showmode
 
 " Toggle relative line numbers
 nnoremap <leader>rnu :set invrnu<CR>
 
 " Strip trailing whitespace
 nnoremap <leader>rstrip :call <SID>StripTrailingWhitespaces()<CR>
-
-" Save with sudo
-cmap w!! w !sudo tee % >/dev/null
-
-" Ignore lingering <shift> when writing a buffer to file
-cmap W w
-
 " Search for visually selected text, forwards or backwards
+
+" Search for visually-selected text by typing '*'
 vnoremap <silent> * :<C-U>
   \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
   \gvy/<C-R><C-R>=substitute(
   \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
+
+" Search in reverse for visually-selected text by typing '#'
 vnoremap <silent> # :<C-U>
   \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
   \gvy?<C-R><C-R>=substitute(
