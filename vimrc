@@ -20,6 +20,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
 
 filetype plugin indent on " required
 
