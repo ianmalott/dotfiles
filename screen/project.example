@@ -6,15 +6,15 @@
 # 3. Create project-specific session with `s <project>`
 #
 # Reference:
-# See ~/.dotfiles/bash/config for s function definition
+# See ~/.dotfiles/bash/functions for s function definition
 
 source $HOME/.dotfiles/screen/before
 
 screen -t log 2 tail -f log/development.log
 screen -t database 3 rails dbconsole
-screen -t console 4 rails console
+screen -t console 4 pry
 screen -t server 5 bash
-  exec thin start -p 3000
-screen -t TODO 9 vim -p $HOME/projects/NOTES $HOME/projects/TODO $HOME/projects/DONE
+  exec foreman start
+screen -t TODO 9 txt
 
 source $HOME/.dotfiles/screen/after
