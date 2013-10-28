@@ -134,9 +134,9 @@ nnoremap k gk
 nnoremap <silent> <leader>yfp :let @+=expand("%")<CR>
 
 " Code review shortcuts for screen
-nnoremap <leader>diff :call <SID>DiffFile()<CR>
-nnoremap <leader>open :call <SID>OpenFile()<CR>
-nnoremap <leader>review :call <SID>ReviewFile()<CR>
+nnoremap <leader>df :call <SID>DiffFile()<CR>
+nnoremap <leader>of :call <SID>OpenFile()<CR>
+nnoremap <leader>rf :call <SID>ReviewFile()<CR>
 
 " Search for lines over 100 columns
 nnoremap <leader>ll /.\{100\}.\+<CR>
