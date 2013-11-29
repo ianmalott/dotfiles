@@ -10,6 +10,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'elixir-lang/vim-elixir'
 Bundle 'gmarik/vundle'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kchmck/vim-coffee-script'
