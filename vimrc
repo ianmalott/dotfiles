@@ -111,9 +111,6 @@ iab <expr> _DATE strftime("%Y-%m-%d")
 " Save with sudo
 cmap w!! w !sudo tee % >/dev/null
 
-" Ignore lingering <shift> when writing a buffer to file
-cmap W w
-
 " Easier window navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
