@@ -14,6 +14,7 @@
   ds = diff --staged
   dstat = diff --stat
   f = fetch
+  ff = merge --ff-only
   files = diff --name-only master...head
   filescp = !git diff --name-only master...head | pbcopy
   head = log -1
