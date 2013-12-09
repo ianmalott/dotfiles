@@ -63,7 +63,8 @@ set ignorecase " case insensitive search; see smartcase below
 set incsearch " show partial searches real-time
 set laststatus=2
 set magic " enable advanced regular expression in searches
-set rnu " set line numbering off
+set relativenumber " use relative line numbers
+set number " show absolute line number of current line
 set noruler " show the cursor position in the bottom right corner
 set numberwidth=2 " characters allotted for line numbers
 set pastetoggle=<leader>paste " specify key sequence for toggling 'paste' option
