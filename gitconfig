@@ -15,6 +15,7 @@
   dstat = diff --stat
   f = fetch
   ff = merge --ff-only
+  ffu = !git ff $(git upstream)
   files = diff --name-only master...head
   filescp = !git diff --name-only master...head | pbcopy
   head = log -1
