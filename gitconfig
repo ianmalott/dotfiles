@@ -8,6 +8,7 @@
   cm = commit
   co = checkout
   com = checkout master
+  ctags = !.git/hooks/ctags
   d = diff
   dc = diff --check
   dno = diff --name-only
@@ -44,6 +45,8 @@
   excludesfile = ~/.gitignore
 [diff]
   tool = vimdiff
+[init]
+  templatedir = ~/.gittemplates
 [push]
   default = upstream
 [user]

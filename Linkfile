@@ -3,6 +3,7 @@ bashrc
 bin
 gitconfig
 gitignore
+gittemplates
 irbrc
 pryrc
 screenrc
