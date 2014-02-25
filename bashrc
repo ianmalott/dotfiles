@@ -2,7 +2,7 @@
 
 # Abort unless running interactively.
 if [ -n "$PS1" ]; then
-  echo "Sourcing ~/.bashrc"
+  echo "Sourcing $BASH_SOURCE"
 else
   return
 fi
