@@ -15,6 +15,7 @@ Bundle 'gmarik/vundle'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
+Bundle 'lmeijvogel/vim-yaml-helper'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tommcdo/vim-exchange'
@@ -125,6 +126,11 @@ map <C-l> <C-w>l
 map <leader>rc :e $HOME/.vimrc<cr>  " edit .vimrc
 map <leader>vrc :vsp $HOME/.vimrc<cr>  " open .vimrc in a split window
 map <leader>source :w<cr> :source $HOME/.vimrc<cr> " save and reload .vimrc
+
+" YAML traversal
+map <leader>yg :YamlGoToKey
+map <leader>yp :YamlGetFullPath<CR>
+map <leader>yu :YamlGoToParent<CR>
 
 " Turn off search highlighting more easily
 nmap <silent> <leader>/ :nohlsearch<CR>
