@@ -156,6 +156,9 @@ nnoremap <C-l> <C-w>l
 nnoremap j gj
 nnoremap k gk
 
+" Switch to last file
+nnoremap <leader><leader> <c-^>
+
 " Yank path of current file
 nnoremap <silent> <leader>yfp :let @+=expand("%")<CR>
 
