@@ -73,6 +73,7 @@ set laststatus=2
 set magic " enable advanced regular expression in searches
 set number " show absolute line number of current line
 set numberwidth=2 " characters allotted for line numbers
+set nopaste " abbreviations don't work when paste mode is on
 set pastetoggle=<leader>paste " specify key sequence for toggling 'paste' option
 set relativenumber " use relative line numbers
 set noruler " show the cursor position in the bottom right corner
