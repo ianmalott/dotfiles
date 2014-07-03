@@ -70,19 +70,19 @@ set ignorecase " case insensitive search; see smartcase below
 set incsearch " show partial searches real-time
 set laststatus=2
 set magic " enable advanced regular expression in searches
-set relativenumber " use relative line numbers
 set number " show absolute line number of current line
-set noruler " show the cursor position in the bottom right corner
 set numberwidth=2 " characters allotted for line numbers
 set pastetoggle=<leader>paste " specify key sequence for toggling 'paste' option
+set relativenumber " use relative line numbers
+set noruler " show the cursor position in the bottom right corner
 set shiftround " round indent to multiple of 'shiftwidth'
 set shiftwidth=2 " number of spaces used with (auto)indention
 set showcmd " display incomplete commands
 set showmatch " flash matching () {} []
 set showmode " display current mode
 set smartcase " case insensitive except with initial capital
-set softtabstop=2
 set smartindent
+set softtabstop=2
 set splitbelow " open horizontal splits below instead of above
 set splitright " open vertical splits to the right instead of to the left
 set statusline=%F%m%r%h%w\ \|\ %{&ff}\ \ %Y\ \ (%l,%v)\ \ %p%%
