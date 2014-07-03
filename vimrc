@@ -133,12 +133,6 @@ iab <expr> _DATE strftime("%Y-%m-%d")
 " Save with sudo
 cmap w!! w !sudo tee % >/dev/null
 
-" Easier window navigation
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-
 " Easy vimrc management
 map <leader>rc :e $HOME/.vimrc<cr>  " edit .vimrc
 map <leader>vrc :vsp $HOME/.vimrc<cr>  " open .vimrc in a split window
@@ -151,6 +145,12 @@ map <leader>yu :YamlGoToParent<CR>
 
 " Turn off search highlighting more easily
 nmap <silent> <leader>/ :nohlsearch<CR>
+
+" Easier window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " Map j and k to work with wrapped lines
 nnoremap j gj
