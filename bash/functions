@@ -30,6 +30,25 @@ function _s {
 }
 complete -F _s s
 
+# Move/rename files with sed
+# Usage: sedmv <path> <pattern> <replacement>
+# Example: sedmv lib foo bar
+function sedmv {
+  local path="$1"
+  local pattern="$2"
+  local replacement="$3"
+
+  for matching_filename in $(find $path -type f -ipath "*$pattern*"); do
+    new_filename=$(echo $matching_filename | sed "s/$pattern/$replacement/g")
+
+    if grep -q '/' <<< $new_filename; then
+      mkdir -p $(dirname $new_filename)
+    fi
+
+    git mv $matching_filename $new_filename
+  done
+}
+
 # Run tests matching pattern in ruby file
 # Usage: t <filename> <pattern>
 function t {
