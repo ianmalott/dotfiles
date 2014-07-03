@@ -6,7 +6,7 @@ echo "Sourcing $BASH_SOURCE"
 # Environment
 #
 
-PATH=/usr/local/bin:/usr/local/sbin:$HOME/.bin:$PATH
+PATH=/usr/local/bin:/usr/local/sbin:$HOME/.bin:/usr/local/heroku/bin:$PATH
 TERM=xterm-256color
 export EDITOR=vim
 export PROJECTS_DIR=$HOME/projects
