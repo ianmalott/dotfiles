@@ -30,6 +30,7 @@
   mb = merge-base
   mbm = merge-base master head
   p = pull
+  rbimbm = !git rebase -i $(git mbm)
   s = status
   sh = show
   shno = show --pretty='format:' --name-only
