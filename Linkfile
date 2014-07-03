@@ -7,4 +7,5 @@ gittemplates
 irbrc
 pryrc
 screenrc
+tmux.conf
 vimrc
