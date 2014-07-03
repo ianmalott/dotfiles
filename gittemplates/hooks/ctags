@@ -3,7 +3,14 @@
 # Tim Pope: Effortless Ctags with Git
 # http://tbaggery.com/2011/08/08/effortless-ctags-with-git.html
 
+# Prevent spawning lots of ctags processes during big rebases by using a directory-based lock.
+# http://tbaggery.com/2011/08/08/effortless-ctags-with-git.html#comment-728214764
+
 set -e
-trap "rm -f .git/tags.$$" EXIT
-ctags -R -f .git/tags.$$ --tag-relative --exclude=.git --languages=-javascript,sql
+
+# Don't run ctags again if it's already running
+mkdir .git/tags_lock 2>/dev/null || exit 0
+trap "rmdir .git/tags_lock; rm .git/tags.$$" EXIT
+
+ctags -R -f .git/tags.$$ --tag-relative --exclude=.git --languages=-css,javascript,sql
 mv .git/tags.$$ .git/tags
