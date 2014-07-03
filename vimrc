@@ -116,6 +116,20 @@ iab <expr> _DATE strftime("%Y-%m-%d")
 """ Mappings
 """
 
+" Base mapping command modes
+" map         normal, visual, and operator-pending; recursive
+" noremap     normal, visual, and operator-pending; non-recursive
+
+" Mapping command prefix modes
+" c           command-line
+" i           insert
+" l           lang-arg (when typing yields text not commands)
+" n           normal
+" o           operator-pending
+" s           select
+" v           visual and select
+" x           visual
+
 " Save with sudo
 cmap w!! w !sudo tee % >/dev/null
 
