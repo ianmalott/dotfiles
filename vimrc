@@ -113,7 +113,7 @@ iab <expr> _DATE strftime("%Y-%m-%d")
 
 
 """
-""" Keyboard mapping
+""" Mappings
 """
 
 " Save with sudo
