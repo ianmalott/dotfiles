@@ -83,6 +83,8 @@ set showmode " display current mode
 set smartcase " case insensitive except with initial capital
 set softtabstop=2
 set smartindent
+set splitbelow " open horizontal splits below instead of above
+set splitright " open vertical splits to the right instead of to the left
 set statusline=%F%m%r%h%w\ \|\ %{&ff}\ \ %Y\ \ (%l,%v)\ \ %p%%
 set noswapfile
 set tabpagemax=15 " max number of tabs
