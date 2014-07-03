@@ -44,6 +44,7 @@ runtime macros/matchit.vim
 """ Variables
 """
 
+let g:ctrlp_match_window = 'results:100' " results often clipped if not increased past max height
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""' " list files in CtrlP with Ag
 let g:rails_ctags_arguments = "`gem env gemdir`/gems --exclude=tmp"
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'" " prevent JS parsing warnings in :Rtags via rails.vim
