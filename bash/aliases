@@ -44,13 +44,13 @@ alias db-restore-production-backup-to-development='bake db:drop db:create && pg_
 alias db-restore-production-backup-to-staging='heroku pgbackups:restore DATABASE `heroku pgbackups:url --app levelup-production` --app levelup-staging'
 
 # Heroku staging
-alias hsc='heroku run console --app levelup-staging'
+alias hsc='heroku run rails console --app levelup-staging'
 alias hsl='heroku logs --tail --app levelup-staging'
 alias hsp='watch heroku ps --app levelup-staging'
 alias hsr='heroku releases --app levelup-staging'
 
 # Heroku production
-alias hpc='heroku run console --app levelup-production'
+alias hpc='heroku run rails console --app levelup-production'
 alias hpl='heroku logs --tail --app levelup-production'
 alias hpp='watch heroku ps --app levelup-production'
 alias hpr='heroku releases --app levelup-production'
