@@ -139,6 +139,13 @@ iab <expr> _DATE strftime("%Y-%m-%d")
 " Save with sudo
 cmap w!! w !sudo tee % >/dev/null
 
+" split line on character
+command -nargs=1 Split call SplitLine(<f-args>)
+
+function! SplitLine(pattern)
+  execute ':s/' . a:pattern . '\s*/\r/g'
+endfunction
+
 " Easy vimrc management
 map <leader>rc :e $HOME/.vimrc<cr>  " edit .vimrc
 map <leader>vrc :vsp $HOME/.vimrc<cr>  " open .vimrc in a split window
