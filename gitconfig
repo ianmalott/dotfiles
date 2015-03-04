@@ -19,6 +19,7 @@
   ff = merge --ff-only
   ffu = !git ff $(git upstream)
   files = diff --name-only master...head
+  filesacmr = diff --name-only master...head --diff-filter=ACMR
   filescp = !git diff --name-only master...head | pbcopy
   head = log -1
   l = log
