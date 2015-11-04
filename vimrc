@@ -6,31 +6,32 @@ set nocompatible " enable vim specific commands
 """
 
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'christoomey/vim-tmux-navigator'
-Bundle 'elixir-lang/vim-elixir'
-Bundle 'gmarik/vundle'
-Bundle 'kana/vim-textobj-user'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'kien/ctrlp.vim'
-Bundle 'lmeijvogel/vim-yaml-helper'
-Bundle 'nelstrom/vim-textobj-rubyblock'
-Bundle 'rking/ag.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tommcdo/vim-exchange'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-rbenv'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'kana/vim-textobj-user'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'kien/ctrlp.vim'
+Plugin 'lmeijvogel/vim-yaml-helper'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'rking/ag.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tommcdo/vim-exchange'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rbenv'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
 
+call vundle#end()
 filetype plugin indent on " required
 
 
