@@ -38,6 +38,7 @@
   shstat = show --stat
   touch = !git commit --amend --date $(isodate)
   unstage = reset HEAD
+  untracked = ls-files --others --exclude-standard
   upstream = !git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD)
 [color]
   ui = auto
