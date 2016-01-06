@@ -12,6 +12,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'DataWraith/auto_mkdir'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'kana/vim-textobj-user'
 Plugin 'kchmck/vim-coffee-script'
