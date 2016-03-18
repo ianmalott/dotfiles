@@ -1,0 +1,20 @@
+#= AUTHOR: ianmalott (https://github.com/ianmalott)
+#= DESCRIPTION: development environment for Identity.com identity repo
+
+PROJECT_PATH=~/projects/identity
+
+new_session -c $PROJECT_PATH
+
+tmux new-window -c $PROJECT_PATH -t 1 -n 'editor'
+tmux new-window -c $PROJECT_PATH -t 2 -n 'database'
+tmux new-window -c $PROJECT_PATH -t 3 -n 'console'
+tmux new-window -c $PROJECT_PATH -t 4 -n 'server'
+tmux new-window -c $PROJECT_PATH -t 9 -n 'notes'
+
+send_line 'server' 'convox start --sync -f docker-compose.development.yml'
+send_line 'notes' 'txt identity'
+
+select_window 'editor'
+
+# -*- mode: sh -*-
+# vi: set ft=sh :
