@@ -13,6 +13,7 @@ alias ipw='ipconfig getifaddr en1'
 alias kb='keybase'
 alias ls='ls -Gp'
 alias topcpu='top -n10 -ocpu'
+alias y='yat.sh'
 
 # Config Management
 alias dotfiles='cd ~/.dotfiles'

@@ -1,0 +1,22 @@
+#= AUTHOR: farfanoide (https://github.com/farfanoide)
+#= DESCRIPTION: Full fledged rails dev env (editor, console, db, server)
+
+new_session -n 'Editor'
+send_line 'Editor' ${EDITOR:-vi}
+
+new_window -n 'General'
+vsplit 'General'
+send_line 'General'.1 'bundle exec rails console'
+send_line 'General'.2 'git status -bs'
+
+new_window -n 'DB'
+send_line 'DB' 'bundle exec rails db'
+
+new_window -n 'Server'
+hsplit 'Server' -p "20"
+send_line 'Server'.1 'bundle exec rails server'
+
+select_window 'Editor'
+
+# -*- mode: sh -*-
+# vi: set ft=sh :

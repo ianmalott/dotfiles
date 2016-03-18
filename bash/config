@@ -13,6 +13,15 @@ GIT_PS1_SHOWUNTRACKEDFILES=true # untracked (%)
 complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null || complete -o default -o nospace -F _git g
 
 #
+# Yat.sh
+#
+
+source ~/.dotfiles/yat.sh/completion/_yat.sh.bash
+
+# Enable completion for 'y'
+complete -F _yat.sh y
+
+#
 # Prompt
 #
 
