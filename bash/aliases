@@ -28,9 +28,3 @@ alias sbashrc='. ~/.dotfiles/bashrc'
 
 # Git
 alias g='git'
-
-# Testing
-alias bake='bundle exec rake'
-alias rtf='bake test:functionals'
-alias rtp='bake parallel:prepare && bake parallel:test parallel:spec'
-alias rtu='bake test:units'
