@@ -2,11 +2,12 @@
 
 # General
 alias b='bundle exec'
+alias c='clear'
+alias g='git'
 alias gr='grep -rn'
 alias grep='grep -I --color'
 alias grepn='grep -n'
 alias grepv='grep -v'
-alias c='clear'
 alias ipe='ipconfig getifaddr en0'
 alias ipw='ipconfig getifaddr en1'
 alias ls='ls -Gp'
@@ -25,6 +26,3 @@ alias evimrc='vim ~/.dotfiles/vimrc'
 alias salias='. ~/.dotfiles/bash/aliases'
 alias sbashconf='. ~/.dotfiles/bash/config'
 alias sbashrc='. ~/.dotfiles/bashrc'
-
-# Git
-alias g='git'
