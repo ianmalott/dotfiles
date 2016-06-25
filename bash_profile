@@ -23,6 +23,12 @@ if [ -f ~/.bashrc ]; then
 fi
 
 #
+# pyenv
+#
+
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+#
 # rbenv
 #
 
