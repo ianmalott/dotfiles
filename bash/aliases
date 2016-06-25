@@ -10,6 +10,7 @@ alias grepn='grep -n'
 alias grepv='grep -v'
 alias ipe='ipconfig getifaddr en0'
 alias ipw='ipconfig getifaddr en1'
+alias kb='keybase'
 alias ls='ls -Gp'
 alias topcpu='top -n10 -ocpu'
 
