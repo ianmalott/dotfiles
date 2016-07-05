@@ -1,0 +1,16 @@
+#= AUTHOR: ianmalott (https://github.com/ianmalott)
+#= DESCRIPTION: development environment for Convox Rack
+
+PROJECT_PATH=~/projects/go/src/github.com/convox/rack
+
+new_session -c $PROJECT_PATH
+
+tmux new-window -c $PROJECT_PATH -t 1 -n 'editor'
+tmux new-window -c $PROJECT_PATH -t 9 -n 'notes'
+
+send_line 'notes' 'txt rack'
+
+select_window 'editor'
+
+# -*- mode: sh -*-
+# vi: set ft=sh :
