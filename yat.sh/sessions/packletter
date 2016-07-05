@@ -1,0 +1,22 @@
+#= AUTHOR: ianmalott (https://github.com/ianmalott)
+#= DESCRIPTION: development environment for packletter
+
+PROJECT_PATH=~/projects/packletter
+
+new_session -c $PROJECT_PATH
+
+tmux new-window -c $PROJECT_PATH -t 1 -n 'editor'
+tmux new-window -c $PROJECT_PATH -t 2 -n 'database'
+tmux new-window -c $PROJECT_PATH -t 3 -n 'console'
+tmux new-window -c $PROJECT_PATH -t 4 -n 'server'
+tmux new-window -c $PROJECT_PATH -t 9 -n 'notes'
+
+send_line 'database' 'rails dbconsole'
+send_line 'console' 'rails console'
+send_line 'server' 'rails server'
+send_line 'notes' 'txt packletter'
+
+select_window 'editor'
+
+# -*- mode: sh -*-
+# vi: set ft=sh :
