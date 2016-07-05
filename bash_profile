@@ -27,9 +27,3 @@ fi
 #
 
 eval "$(rbenv init -)"
-
-#
-# docker
-#
-
-eval "$(docker-machine env default)"
