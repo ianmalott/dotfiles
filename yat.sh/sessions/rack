@@ -1,14 +1,18 @@
 #= AUTHOR: ianmalott (https://github.com/ianmalott)
 #= DESCRIPTION: development environment for Convox Rack
 
-PROJECT_PATH=~/projects/go/src/github.com/convox/rack
+GO_SRC_PATH=~/projects/go/src/github.com
+PROJECTS_PATH=~/projects
 
-new_session -c $PROJECT_PATH
+new_session -c $GO_SRC_PATH/convox/rack
 
-tmux new-window -c $PROJECT_PATH -t 1 -n 'editor'
-tmux new-window -c $PROJECT_PATH -t 9 -n 'notes'
+tmux new-window -c $GO_SRC_PATH/convox/rack -t 1 -n 'editor'
+tmux new-window -c $PROJECTS_PATH/convox/python -t 2 -n 'convox/python'
+tmux new-window -c $PROJECTS_PATH/convox/django -t 3 -n 'conox/django'
+tmux new-window -c $PROJECTS_PATH/convox-examples/django -t 4 -n 'convox-examples/django'
+tmux new-window -c $GO_SRC_PATH/convox/rack -t 9 -n 'notes'
 
-send_line 'notes' 'txt rack'
+send_line 'notes' 'txt convox'
 
 select_window 'editor'
 
