@@ -64,7 +64,6 @@ set backspace=indent,eol,start " backspace over these
 set nobackup
 set nocindent " c-style indenting
 set clipboard=unnamed " enable clipboard integration with Mac OS X
-set colorcolumn=+1 " show boundary of textwidth
 set cursorline " highlight current line
 set noeb " disable error bells
 set expandtab " replace tabs with spaces
@@ -96,7 +95,6 @@ set statusline=%F%m%r%h%w\ \|\ %{&ff}\ \ %Y\ \ (%l,%v)\ \ %p%%
 set noswapfile
 set tabpagemax=15 " max number of tabs
 set tabstop=2 " tab size
-set textwidth=100
 set novb " don't blink the screen when there is an error
 set wildmenu " display options for tab completion in command mode
 set wildmode=list:longest " tab completion up to point of ambiguity
