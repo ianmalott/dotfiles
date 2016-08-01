@@ -52,6 +52,8 @@
   tool = vimdiff
 [init]
   templatedir = ~/.gittemplates
+[merge]
+  conflictstyle = diff3
 [push]
   default = upstream
 [user]
