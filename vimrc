@@ -9,11 +9,13 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" Let Vundle manage itself
 Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'DataWraith/auto_mkdir'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'DataWraith/auto_mkdir'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'fatih/vim-go'
 Plugin 'kana/vim-textobj-user'
