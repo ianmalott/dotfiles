@@ -7,7 +7,7 @@ PROJECTS_PATH=~/projects
 new_session -c $GO_SRC_PATH/convox/rack
 
 tmux new-window -t 1 -c $GO_SRC_PATH/convox/rack -n 'editor'
-tmux new-window -t 2 -c $PROJECTS_PATH/convox/rack -n 'convox/rack'
+tmux new-window -t 2 -c $GO_SRC_PATH/convox/rack -n 'convox/rack'
 tmux new-window -t 3 -c $PROJECTS_PATH/convox/site -n 'convox/site'
 tmux new-window -t 9 -c $GO_SRC_PATH/convox/rack -n 'notes'
 
