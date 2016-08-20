@@ -26,6 +26,7 @@
   l1 = log -1
   lb = log --oneline master..
   lg = log --graph --pretty=format:'%C(yellow)%h%Creset %s %C(cyan)%d %C(black) %an, %cr%Creset'
+  ll = log -p master.. .
   lo = log --oneline
   ls = log --oneline -n20
   mb = merge-base
