@@ -41,7 +41,7 @@ filetype plugin indent on " required
 
 
 """
-""" Plugins
+""" Plugins Distributed with Vim
 """
 
 runtime macros/matchit.vim
