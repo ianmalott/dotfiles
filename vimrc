@@ -215,10 +215,6 @@ vnoremap <silent> # :<C-U>
 """ Functions
 """
 
-function! ConvertDos()
-  execute ":%s/^M//ge"
-endfunction
-
 function! <SID>DiffFile()
   :silent !screen -p 0 -X stuff 'git diff master...head <cfile>'
 endfunction
