@@ -61,6 +61,7 @@ let mapleader=',' " use comma as leader
 """ Options
 """
 
+set   autoindent
 set   background=dark " used by solarized color scheme
 set   backspace=indent,eol,start " backspace over these
 set nobackup
@@ -89,7 +90,7 @@ set   showcmd " display info about in-progress commands, e.g. selecting text
 set   showmatch " flash matching () {} []
 set   showmode " display current mode
 set   smartcase " case insensitive except with initial capital
-set   smartindent
+set nosmartindent " use autoindent instead
 set   softtabstop=2
 set   splitbelow " open horizontal splits below instead of above
 set   splitright " open vertical splits to the right instead of to the left
