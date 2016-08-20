@@ -144,13 +144,6 @@ iab <expr> _DATE strftime("%Y-%m-%d")
 " Save with sudo
 cmap w!! w !sudo tee % >/dev/null
 
-" split line on character
-command -nargs=1 Split call SplitLine(<f-args>)
-
-function! SplitLine(pattern)
-  execute ':s/' . a:pattern . '\s*/\r/g'
-endfunction
-
 " Easy vimrc management
 map <leader>rc :e $HOME/.vimrc<cr>  " edit .vimrc
 map <leader>vrc :vsp $HOME/.vimrc<cr>  " open .vimrc in a split window
@@ -240,6 +233,12 @@ function! <SID>ReviewFile()
   :silent !screen -p 0 -X stuff 'git diff master...head <cfile>'
 endfunction
 
+" Split lines in range on `pattern`
+function! SplitLine(pattern) range
+  " Concatenates to something like :10,35s/\s*,\s*/\r/g
+  execute ':' . a:firstline . ',' . a:lastline . 's/\s*' . a:pattern . '\s*/\r/g'
+endfunction
+
 function! <SID>StripTrailingWhitespaces()
   " Save last search and cursor position
   let _s=@/
@@ -253,6 +252,16 @@ function! <SID>StripTrailingWhitespaces()
   let @/=_s
   call cursor(l, c)
 endfunction
+
+
+"""
+""" Commands
+"""
+
+" Use `:Split ,` to split comma-separated items onto their own lines
+" The `-range` option enables using `:Split` with visual selections
+" <line1> is the first line of the range, <line2> is the last line of the range
+command -nargs=1 -range Split <line1>,<line2>call SplitLine(<f-args>)
 
 
 """
