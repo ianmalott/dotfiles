@@ -10,6 +10,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'DataWraith/auto_mkdir'
@@ -50,6 +51,7 @@ runtime macros/matchit.vim
 
 let g:ctrlp_match_window = 'results:100' " results often clipped if not increased past max height
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""' " list files in CtrlP with Ag
+let g:gitgutter_enabled = 0 " disable GitGutter by default (toggle with <leader>ggt or :GitGutterToggle)
 let g:rails_ctags_arguments = "`gem env gemdir`/gems --exclude=tmp"
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'" " prevent JS parsing warnings in :Rtags via rails.vim
 let mapleader=',' " use comma as leader
@@ -95,6 +97,7 @@ set statusline=%F%m%r%h%w\ \|\ %{&ff}\ \ %Y\ \ (%l,%v)\ \ %p%%
 set noswapfile
 set tabpagemax=15 " max number of tabs
 set tabstop=2 " tab size
+set updatetime=250 " write to swap after 250ms idle (default: 4000ms)
 set novb " don't blink the screen when there is an error
 set wildmenu " display options for tab completion in command mode
 set wildmode=list:longest " tab completion up to point of ambiguity
@@ -159,6 +162,9 @@ map <leader>yu :YamlGoToParent<CR>
 
 " Turn off search highlighting more easily
 nmap <silent> <leader>/ :nohlsearch<CR>
+
+" Toggle Git Gutter
+nmap <leader>ggt :GitGutterToggle<CR>
 
 " Easier window navigation
 nnoremap <C-h> <C-w>h
