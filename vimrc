@@ -168,10 +168,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" Map j and k to work with wrapped lines
-nnoremap j gj
-nnoremap k gk
-
 " Switch to last file
 nnoremap <leader><leader> <c-^>
 
