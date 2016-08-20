@@ -195,7 +195,6 @@ nnoremap <leader>rnu :set invrnu<CR>
 
 " Strip trailing whitespace
 nnoremap <leader>rstrip :call <SID>StripTrailingWhitespaces()<CR>
-" Search for visually selected text, forwards or backwards
 
 " Search for visually-selected text by typing '*'
 vnoremap <silent> * :<C-U>
