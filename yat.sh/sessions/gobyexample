@@ -1,13 +1,14 @@
 #= AUTHOR: ianmalott (https://github.com/ianmalott)
 #= DESCRIPTION: development environment for Convox Rack
 
-PROJECTS_PATH=~/projects
 
-new_session -c $PROJECTS_PATH/gobyexample
+PROJECT_PATH=~/projects/go/src/github.com/ianmalott/gobyexample
 
-tmux new-window -c $PROJECTS_PATH/gobyexample -t 1 -n 'editor'
-tmux new-window -c $PROJECTS_PATH/gobyexample -t 2 -n 'extra'
-tmux new-window -c $PROJECTS_PATH/convox/rack -t 9 -n 'notes'
+new_session -c $PROJECT_PATH
+
+tmux new-window -c $PROJECT_PATH -t 1 -n 'editor'
+tmux new-window -c $PROJECT_PATH -t 2 -n 'extra'
+tmux new-window -c $PROJECT_PATH -t 9 -n 'notes'
 
 send_line 'notes' 'txt gobyexample'
 
