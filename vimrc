@@ -61,46 +61,46 @@ let mapleader=',' " use comma as leader
 """ Options
 """
 
-set background=dark
-set backspace=indent,eol,start " backspace over these
+set   background=dark
+set   backspace=indent,eol,start " backspace over these
 set nobackup
 set nocindent " c-style indenting
-set clipboard=unnamed " enable clipboard integration with Mac OS X
-set cursorline " highlight current line
+set   clipboard=unnamed " enable clipboard integration with Mac OS X
+set   cursorline " highlight current line
 set noeb " disable error bells
-set expandtab " replace tabs with spaces
-set fileformat=unix " use the unix fileformat
-set hidden " enable hidden files
-set history=1000 " length of command line history
-set hlsearch " highlight last search
-set ignorecase " case insensitive search; see smartcase below
-set incsearch " show partial searches real-time
-set laststatus=2
-set magic " enable advanced regular expression in searches
-set number " show absolute line number of current line
-set numberwidth=2 " characters allotted for line numbers
+set   expandtab " replace tabs with spaces
+set   fileformat=unix " use the unix fileformat
+set   hidden " enable hidden files
+set   history=1000 " length of command line history
+set   hlsearch " highlight last search
+set   ignorecase " case insensitive search; see smartcase below
+set   incsearch " show partial searches real-time
+set   laststatus=2
+set   magic " enable advanced regular expression in searches
+set   number " show absolute line number of current line
+set   numberwidth=2 " characters allotted for line numbers
 set nopaste " abbreviations don't work when paste mode is on
-set pastetoggle=<leader>paste " specify key sequence for toggling 'paste' option
-set relativenumber " use relative line numbers
+set   pastetoggle=<leader>paste " specify key sequence for toggling 'paste' option
+set   relativenumber " use relative line numbers
 set noruler " show the cursor position in the bottom right corner
-set shiftround " round indent to multiple of 'shiftwidth'
-set shiftwidth=2 " number of spaces used with (auto)indention
-set showcmd " display incomplete commands
-set showmatch " flash matching () {} []
-set showmode " display current mode
-set smartcase " case insensitive except with initial capital
-set smartindent
-set softtabstop=2
-set splitbelow " open horizontal splits below instead of above
-set splitright " open vertical splits to the right instead of to the left
-set statusline=%F%m%r%h%w\ \|\ %{&ff}\ \ %Y\ \ (%l,%v)\ \ %p%%
+set   shiftround " round indent to multiple of 'shiftwidth'
+set   shiftwidth=2 " number of spaces used with (auto)indention
+set   showcmd " display incomplete commands
+set   showmatch " flash matching () {} []
+set   showmode " display current mode
+set   smartcase " case insensitive except with initial capital
+set   smartindent
+set   softtabstop=2
+set   splitbelow " open horizontal splits below instead of above
+set   splitright " open vertical splits to the right instead of to the left
+set   statusline=%F%m%r%h%w\ \|\ %{&ff}\ \ %Y\ \ (%l,%v)\ \ %p%%
 set noswapfile
-set tabpagemax=15 " max number of tabs
-set tabstop=2 " tab size
-set updatetime=250 " write to swap after 250ms idle (default: 4000ms)
+set   tabpagemax=15 " max number of tabs
+set   tabstop=2 " tab size
+set   updatetime=250 " write to swap after 250ms idle (default: 4000ms)
 set novb " don't blink the screen when there is an error
-set wildmenu " display options for tab completion in command mode
-set wildmode=list:longest " tab completion up to point of ambiguity
+set   wildmenu " display options for tab completion in command mode
+set   wildmode=list:longest " tab completion up to point of ambiguity
 
 
 """
