@@ -266,6 +266,7 @@ command -nargs=1 -range Split <line1>,<line2>call SplitLine(<f-args>)
 if has("autocmd")
   " Whitespace preferences
   autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
+  autocmd FileType GO setlocal ts=2 sts=2 sw=2 expandtab
 
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
