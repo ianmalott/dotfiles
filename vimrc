@@ -179,9 +179,6 @@ nnoremap <leader>df :call <SID>DiffFile()<CR>
 nnoremap <leader>of :call <SID>OpenFile()<CR>
 nnoremap <leader>rf :call <SID>ReviewFile()<CR>
 
-" Search for lines over 100 columns
-nnoremap <leader>ll /.\{100\}.\+<CR>
-
 " Open TODO topic heading
 nnoremap <leader>th O<ESC>80i-<ESC>o<ESC>78i`<ESC>O
 
