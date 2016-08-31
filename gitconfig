@@ -36,6 +36,7 @@
   rmc = rm --cached
   s = status
   sh = show
+  shm = !sh -c 'git diff $1^1...$1^2' -
   shno = show --pretty='format:' --name-only
   shstat = show --stat
   touch = !git commit --amend --date $(isodate)
