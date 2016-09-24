@@ -1,6 +1,5 @@
 .agignore
 .bundle
-.convox
 .docker
 .ruby-gemset
 .ruby-version
