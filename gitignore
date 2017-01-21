@@ -1,6 +1,7 @@
 .agignore
 .bundle
 .docker
+.jekyll-metadata
 .ruby-gemset
 .ruby-version
 .screenrc
