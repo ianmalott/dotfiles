@@ -11,6 +11,7 @@
   ctags = !.git/hooks/ctags
   d = diff
   dc = diff --check
+  dcw = diff --color-words
   dno = diff --name-only
   ds = diff --staged
   dstat = diff --stat
