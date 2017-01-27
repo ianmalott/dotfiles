@@ -12,7 +12,6 @@ export TERM=xterm-256color
 export TEXTS_DIR=$HOME/texts
 
 export GOPATH=$PROJECTS_DIR/go
-export PATH=$GOPATH/bin:/usr/local/bin:/usr/local/sbin:$HOME/.bin:/usr/local/heroku/bin:$PATH
 
 #
 # Bash interactive shell initialization
@@ -22,14 +21,10 @@ if [ -f ~/.bashrc ]; then
   source ~/.bashrc
 fi
 
-#
-# pyenv
-#
+# Prevent duplicates in PATH when using Tmux
+if [[ -z $TMUX ]]; then
+  PATH=$GOPATH/bin:/usr/local/bin:/usr/local/sbin:$HOME/.bin:/usr/local/heroku/bin:$PATH
 
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
-#
-# rbenv
-#
-
-eval "$(rbenv init -)"
+  if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+  if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+fi
