@@ -99,6 +99,7 @@ set   splitbelow " open horizontal splits below instead of above
 set   splitright " open vertical splits to the right instead of to the left
 set   statusline=%F%m%r%h%w\ \|\ %{&ff}\ \ %Y\ \ (%l,%v)\ \ %p%%
 set noswapfile
+set   t_BE= " disable bracketed paste mode to prevent <PasteStart>pasted<PasteEnd>
 set   tabpagemax=15 " max number of tabs
 set   tabstop=2 " tab size
 set   updatetime=250 " write to swap after 250ms idle (default: 4000ms)
