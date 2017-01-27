@@ -73,6 +73,7 @@ set   cursorline " highlight current line
 set noerrorbells " disable error bells
 set   expandtab " replace tabs with spaces
 set   fileformat=unix " use the unix fileformat
+set   foldmethod=marker " use default {{{ fold this }}} markers
 set   hidden " enable hidden files
 set   history=1000 " length of command line history
 set   hlsearch " highlight last search
