@@ -23,7 +23,7 @@ complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null || complete 
 # Yat.sh
 #
 
-source ~/.dotfiles/yat.sh/completion/_yat.sh.bash
+source ~/.yat.sh/completions/_yat.sh.bash
 
 # Enable completion for 'y'
 complete -F _yat.sh y

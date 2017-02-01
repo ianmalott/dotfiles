@@ -23,7 +23,7 @@ fi
 
 # Prevent duplicates in PATH when using Tmux
 if [[ -z $TMUX ]]; then
-  PATH=$GOPATH/bin:/usr/local/bin:/usr/local/sbin:$HOME/.bin:/usr/local/heroku/bin:$PATH
+  PATH=$GOPATH/bin:/usr/local/bin:/usr/local/sbin:$HOME/.bin:$HOME/.yat.sh/bin:/usr/local/heroku/bin:$PATH
 
   if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
   if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
