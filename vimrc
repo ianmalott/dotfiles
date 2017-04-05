@@ -1,10 +1,8 @@
-set nocompatible " enable vim specific commands
+""" Vundle {{{
+""
+"
 
-
-"""
-""" Vundle
-"""
-
+set nocompatible " enable vim-specific commands
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -39,17 +37,23 @@ Plugin 'tpope/vim-surround'
 call vundle#end()
 filetype plugin indent on " required
 
+"
+""
+""" }}}
 
-"""
-""" Plugins Distributed with Vim
-"""
+""" Plugins Distributed with Vim {{{
+""
+"
 
 runtime macros/matchit.vim
 
+"
+""
+""" }}}
 
-"""
-""" Variables
-"""
+""" Variables {{{
+""
+"
 
 let g:ctrlp_match_window = 'results:100' " results often clipped if not increased past max height
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""' " list files in CtrlP with Ag
@@ -58,10 +62,13 @@ let g:rails_ctags_arguments = "`gem env gemdir`/gems --exclude=tmp"
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'" " prevent JS parsing warnings in :Rtags via rails.vim
 let mapleader=',' " use comma as leader
 
+"
+""
+""" }}}
 
-"""
-""" Options
-"""
+""" Options {{{
+""
+"
 
 set   autoindent
 set   background=dark " used by solarized color scheme
@@ -107,10 +114,13 @@ set novisualbell " don't blink the screen when there is an error
 set   wildmenu " display options for tab completion in command mode
 set   wildmode=list:longest " tab completion up to point of ambiguity
 
+"
+""
+""" }}}
 
-"""
-""" Colors
-"""
+""" Colors {{{
+""
+"
 
 colorscheme solarized
 syn on " automatic syntax hilighting
@@ -118,18 +128,24 @@ hi statusline ctermbg=green ctermfg=black cterm=none
 hi statuslinenc ctermbg=black ctermfg=green cterm=none
 hi vertsplit ctermbg=black ctermfg=black cterm=none
 
+"
+""
+""" }}}
 
-"""
-""" Abbreviations
-"""
+""" Abbreviations {{{
+""
+"
 
 iab _NAME Ian Si Malott
 iab <expr> _DATE strftime("%Y-%m-%d")
 
+"
+""
+""" }}}
 
-"""
-""" Mappings
-"""
+""" Mappings {{{
+""
+"
 
 " Base mapping command modes
 " map         normal, visual, and operator-pending; recursive
@@ -207,10 +223,13 @@ vnoremap <silent> # :<C-U>
   \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
+"
+""
+""" }}}
 
-"""
-""" Functions
-"""
+""" Functions {{{
+""
+"
 
 function! <SID>DiffFile()
   :silent !screen -p 0 -X stuff 'git diff master...head <cfile>'
@@ -245,20 +264,26 @@ function! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfunction
 
+"
+""
+""" }}}
 
-"""
-""" Commands
-"""
+""" Commands {{{
+""
+"
 
 " Use `:Split ,` to split comma-separated items onto their own lines
 " The `-range` option enables using `:Split` with visual selections
 " <line1> is the first line of the range, <line2> is the last line of the range
 command -nargs=1 -range Split <line1>,<line2>call SplitLine(<f-args>)
 
+"
+""
+""" }}}
 
-"""
-""" Auto Commands
-"""
+""" Auto Commands {{{
+""
+"
 
 if has("autocmd")
   " Whitespace preferences
@@ -271,3 +296,9 @@ if has("autocmd")
   " Treat RABL files as Ruby
   autocmd Bufenter *.rabl setfiletype ruby
 endif
+
+"
+""
+""" }}}
+
+" vim:foldmethod=marker:foldlevel=0
