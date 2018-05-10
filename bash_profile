@@ -34,11 +34,18 @@ fi
 # Prevent duplicates in PATH when using Tmux
 #
 
-if [[ -z $PATH_CUSTOMIZED ]]; then
-  PATH=$GOPATH/bin:/usr/local/bin:/usr/local/sbin:$HOME/.bin:$HOME/.yat.sh/bin:/usr/local/heroku/bin:$PATH
+if [[ -z $PATH_ALREADY_MODIFIED ]]; then
+  PREPEND=$GOPATH/bin
+  PREPEND=$PREPEND:/usr/local/bin
+  PREPEND=$PREPEND:/usr/local/sbin
+  PREPEND=$PREPEND:$HOME/.bin
+  PREPEND=$PREPEND:$HOME/.yat.sh/bin
+  PREPEND=$PREPEND:/usr/local/heroku/bin
+
+  PATH=$PREPEND:$PATH
 
   if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
   if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-  PATH_CUSTOMIZED=true
+  PATH_ALREADY_MODIFIED=true
 fi
