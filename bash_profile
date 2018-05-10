@@ -44,6 +44,7 @@ if [[ -z $PATH_ALREADY_MODIFIED ]]; then
 
   PATH=$PREPEND:$PATH
 
+  if which asdf  > /dev/null; then source /usr/local/opt/asdf/asdf.sh; fi
   if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
   if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
