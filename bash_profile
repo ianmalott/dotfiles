@@ -34,10 +34,12 @@ fi
 # Prevent duplicates in PATH when using Tmux
 #
 
+
 if [[ -z $PATH_ALREADY_MODIFIED ]]; then
   PREPEND=$GOPATH/bin
   PREPEND=$PREPEND:/usr/local/bin
   PREPEND=$PREPEND:/usr/local/sbin
+  PREPEND=$PREPEND:$(brew --prefix qt@5.5)/bin
   PREPEND=$PREPEND:$HOME/.bin
   PREPEND=$PREPEND:$HOME/.yat.sh/bin
   PREPEND=$PREPEND:/usr/local/heroku/bin
