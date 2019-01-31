@@ -5,6 +5,7 @@
 .ruby-gemset
 .ruby-version
 .screenrc
+.tool-versions
 doc/tags
 tags
 Godeps/_workspace/
