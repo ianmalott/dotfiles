@@ -39,6 +39,7 @@
   rmc = rm --cached
   s = status
   sh = show
+  shb = !git show $(git mbm)...
   shm = !sh -c 'git diff $1^1...$1^2' -
   shno = show --pretty='format:' --name-only
   shstat = show --stat
