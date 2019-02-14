@@ -51,3 +51,22 @@ if [[ -z $PATH_ALREADY_MODIFIED ]]; then
 
   PATH_ALREADY_MODIFIED=true
 fi
+
+
+#
+# Completion
+#
+
+# Completion via the bash-completion@2 homebrew package (requires bash 4.1+)
+# Source all completion scripts in /usr/local/etc/bash_completion.d/
+export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
+# Yat.sh
+source ~/.yat.sh/completions/_yat.sh.bash
+
+# Enable completion for 'g' (git)
+complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null || complete -o default -o nospace -F _git g
+
+# Enable completion for 'y' (yat.sh)
+complete -F _yat.sh y
