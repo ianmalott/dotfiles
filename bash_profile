@@ -44,8 +44,6 @@ if [[ -z $PATH_ALREADY_MODIFIED ]]; then
 
   PATH=$PREPEND:$PATH
 
-  if which asdf  > /dev/null; then source /usr/local/opt/asdf/asdf.sh; fi
-
   PATH_ALREADY_MODIFIED=true
 fi
 
@@ -64,3 +62,9 @@ complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null || complete 
 
 # Enable completion for 'y' (yat.sh)
 complete -F _yat.sh y
+
+#
+# asdf version manager
+#
+
+if which asdf > /dev/null; then source /usr/local/opt/asdf/asdf.sh; fi
