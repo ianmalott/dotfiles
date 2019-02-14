@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Print each entry in PATH on its own line
+echo $PATH | tr ':' '\n'
