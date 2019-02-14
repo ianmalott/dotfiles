@@ -31,22 +31,19 @@ if [ -f ~/.bashrc ]; then
 fi
 
 #
-# Prevent duplicates in PATH when using Tmux
+# PATH
 #
 
-
+# Prevent duplicates in PATH when using Tmux
 if [[ -z $PATH_ALREADY_MODIFIED ]]; then
   PREPEND=$GOPATH/bin
   PREPEND=$PREPEND:/usr/local/bin
-  PREPEND=$PREPEND:/usr/local/op/qt@5.5/bin # remove when obsolete at work
   PREPEND=$PREPEND:$HOME/.bin
   PREPEND=$PREPEND:/usr/local/heroku/bin
-
+  PREPEND=$PREPEND:/usr/local/op/qt@5.5/bin # remove when obsolete at work
   PATH=$PREPEND:$PATH
-
   PATH_ALREADY_MODIFIED=true
 fi
-
 
 #
 # Completion
