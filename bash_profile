@@ -41,7 +41,6 @@ if [[ -z $PATH_ALREADY_MODIFIED ]]; then
   PREPEND=$PREPEND:/usr/local/sbin
   PREPEND=$PREPEND:$(brew --prefix qt@5.5)/bin
   PREPEND=$PREPEND:$HOME/.bin
-  PREPEND=$PREPEND:$HOME/.yat.sh/bin
   PREPEND=$PREPEND:/usr/local/heroku/bin
 
   PATH=$PREPEND:$PATH
@@ -61,9 +60,6 @@ fi
 # Source all completion scripts in /usr/local/etc/bash_completion.d/
 export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
-
-# Yat.sh
-source ~/.yat.sh/completions/_yat.sh.bash
 
 # Enable completion for 'g' (git)
 complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null || complete -o default -o nospace -F _git g
