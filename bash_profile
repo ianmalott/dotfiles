@@ -2,16 +2,17 @@
 
 echo "Sourcing $BASH_SOURCE"
 
+
 #
 # Environment
 #
 
 export EDITOR=vim
-export PROJECTS_DIR=$HOME/projects
+export GOPATH=~/projects/go
+export PROJECTS_DIR=~/projects
 export TERM=xterm-256color
-export TEXTS_DIR=$HOME/texts
+export TEXTS_DIR=~/texts
 
-export GOPATH=$PROJECTS_DIR/go
 
 #
 # Preemptively source /etc/profile so it doesn't prepend PATH later
@@ -22,6 +23,7 @@ if [[ -f /etc/profile ]]; then
   source /etc/profile
 fi
 
+
 #
 # Bash interactive shell initialization
 #
@@ -29,6 +31,7 @@ fi
 if [ -f ~/.bashrc ]; then
   source ~/.bashrc
 fi
+
 
 #
 # PATH
@@ -66,6 +69,7 @@ complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null || complete 
 
 # Enable completion for 'y' (yat.sh)
 complete -F _yat.sh y
+
 
 #
 # Primary prompt string
