@@ -34,16 +34,23 @@ fi
 # PATH
 #
 
-# Prevent duplicates in PATH when using Tmux
 if [[ -z $PATH_ALREADY_MODIFIED ]]; then
   PREPEND=$GOPATH/bin
   PREPEND=$PREPEND:/usr/local/bin
   PREPEND=$PREPEND:$HOME/.bin
   PREPEND=$PREPEND:/usr/local/heroku/bin
   PREPEND=$PREPEND:/usr/local/op/qt@5.5/bin # remove when obsolete at work
+
   PATH=$PREPEND:$PATH
-  PATH_ALREADY_MODIFIED=true
+  unset PREPEND
+
+  PATH_ALREADY_MODIFIED=true # Prevent duplicates in PATH when using Tmux
 fi
+
+# Initialize asdf version manager
+# Add ASDF_BIN and ASDF_USER_SHIMS to front of PATH
+if which asdf > /dev/null; then source /usr/local/opt/asdf/asdf.sh; fi
+
 
 #
 # Completion
@@ -61,7 +68,5 @@ complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null || complete 
 complete -F _yat.sh y
 
 #
-# asdf version manager
 #
 
-if which asdf > /dev/null; then source /usr/local/opt/asdf/asdf.sh; fi
