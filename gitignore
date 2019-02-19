@@ -1,6 +1,6 @@
-.agignore
 .bundle
 .docker
+.ignore
 .jekyll-metadata
 .ruby-gemset
 .ruby-version
