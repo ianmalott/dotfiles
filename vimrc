@@ -1,42 +1,35 @@
-""" Vundle {{{
+set nocompatible " enable vim-specific options
+
+""" Vim-plug {{{
 ""
 "
 
-set nocompatible " enable vim-specific commands
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" Let Vundle manage itself
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'DataWraith/auto_mkdir'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'fatih/vim-go'
-Plugin 'itchyny/lightline.vim'
-Plugin 'kana/vim-textobj-user'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'kien/ctrlp.vim'
-Plugin 'lmeijvogel/vim-yaml-helper'
-Plugin 'nelstrom/vim-textobj-rubyblock'
-Plugin 'rking/ag.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tommcdo/vim-exchange'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-haml'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rbenv'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-
-call vundle#end()
-filetype plugin indent on " required
+call plug#begin('~/.vim/plugged')
+Plug 'DataWraith/auto_mkdir'
+Plug 'airblade/vim-gitgutter'
+Plug 'altercation/vim-colors-solarized'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'elixir-lang/vim-elixir'
+Plug 'fatih/vim-go'
+Plug 'itchyny/lightline.vim'
+Plug 'kana/vim-textobj-user'
+Plug 'kchmck/vim-coffee-script'
+Plug 'kien/ctrlp.vim'
+Plug 'lmeijvogel/vim-yaml-helper'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'rking/ag.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tommcdo/vim-exchange'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-haml'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rbenv'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+call plug#end()
 
 "
 ""

@@ -8,4 +8,5 @@ irbrc
 pryrc
 screenrc
 tmux.conf
+vim/autoload/plug.vim
 vimrc
