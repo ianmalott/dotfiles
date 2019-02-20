@@ -19,7 +19,7 @@ function open_texts () {
   local files=$default_files
 
   if [ -z "$collection" ]; then
-    break
+    : # no collection specified; open default text files
   elif [[ -d $collection_dir && "$(ls $collection_dir)" ]]; then
     files="$files $collection_dir/*"
   else
