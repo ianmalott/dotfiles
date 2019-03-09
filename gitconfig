@@ -37,7 +37,7 @@
   p = pull
   pup = !git push -u origin $(git bname) # push upstream
   rbimbm = !git rebase -i $(git mbm)
-  rbc = !git rebase --continue
+  rbc = rebase --continue
   rmc = rm --cached
   s = status
   sh = show
