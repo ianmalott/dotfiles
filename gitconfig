@@ -3,6 +3,7 @@
   amend = commit --amend
   b = branch
   ba = branch -a
+  bname = rev-parse --abbrev-ref HEAD
   br = branch -r
   back = checkout -
   cm = commit
