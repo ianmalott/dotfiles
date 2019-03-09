@@ -38,6 +38,7 @@
   pup = !git push -u origin $(git bname) # push upstream
   rbimbm = !git rebase -i $(git mbm)
   rbc = rebase --continue
+  rbs = am --show-current-patch
   rmc = rm --cached
   s = status
   sh = show
