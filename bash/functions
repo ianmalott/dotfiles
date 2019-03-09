@@ -42,7 +42,8 @@ function t {
 # Usage: tm <filename> <filename>
 function tm {
   for filename in "$@"; do
-    t $filename
+    echo -e "\n\n$filename\n";
+    t $filename;
   done
 }
 
