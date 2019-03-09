@@ -227,16 +227,18 @@ vnoremap <silent> # :<C-U>
 "
 
 function! <SID>DiffFile()
-  :silent !screen -p 0 -X stuff 'git diff master...head <cfile>'
+  :silent !tmux send-keys -t levelup:0.0 'git diff master...head <cfile>'
+  :redraw!
 endfunction
 
 function! <SID>OpenFile()
-  :silent !screen -p 1 -X stuff 'vim <cfile>'
+  :silent !tmux send-keys -t levelup:1.0 'vim <cfile>'
+  :redraw!
 endfunction
 
 function! <SID>ReviewFile()
-  :silent !screen -p 1 -X stuff 'vim <cfile>'
-  :silent !screen -p 0 -X stuff 'git diff master...head <cfile>'
+  :call <SID>DiffFile()
+  :call <SID>OpenFile()
 endfunction
 
 " Split lines in range on `pattern`
