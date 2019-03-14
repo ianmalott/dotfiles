@@ -78,4 +78,4 @@ source ~/.dotfiles/bash/colors
 GIT_PS1_SHOWDIRTYSTATE=true # unstaged (*), staged (+)
 GIT_PS1_SHOWSTASHSTATE=true # stashed ($)
 GIT_PS1_SHOWUNTRACKEDFILES=true # untracked (%)
-PS1="\n$BLD_WHI\u$REG_RED@$REG_BLU\h $REG_CYA\w$BLD_GRE \$(__git_ps1 "%s")\n❯$DEFAULT "
+PS1="\n$BLD_WHI\u$REG_RED@$REG_BLU\h $REG_CYA\w$BLD_GRE \$(__git_ps1 "%s")\n\$$DEFAULT "
