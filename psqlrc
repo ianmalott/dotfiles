@@ -1,0 +1,7 @@
+-- Show how long each query takes to execute
+\timing
+
+-- Display null visibly
+-- Default null display is '', which is invisible and indistinguishable from empty strings
+\pset null '(null)'
+

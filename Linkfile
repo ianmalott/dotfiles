@@ -6,6 +6,7 @@ gitignore
 gittemplates
 irbrc
 pryrc
+psqlrc
 screenrc
 tmux.conf
 vim/autoload/plug.vim
