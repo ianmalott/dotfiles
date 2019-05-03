@@ -53,8 +53,8 @@ let g:ctrlp_match_window = 'results:100' " results often clipped if not increase
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""' " list files in CtrlP with Ag
 let g:gitgutter_enabled = 0 " disable GitGutter by default (toggle with <leader>ggt or :GitGutterToggle)
 let g:lightline = { 'colorscheme': 'solarized' } " use solarized colors for lightline
-let g:rails_ctags_arguments = "`gem env gemdir`/gems --exclude=tmp"
-let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'" " prevent JS parsing warnings in :Rtags via rails.vim
+let g:rails_ctags_arguments = "--exclude=tmp --exclude=vendor"
+let g:Tlist_Ctags_Cmd="ripper-tags -R"
 let mapleader=',' " use comma as leader
 
 "
