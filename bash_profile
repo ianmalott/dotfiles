@@ -40,6 +40,7 @@ fi
 if [[ -z $PATH_ALREADY_MODIFIED ]]; then
   PREPEND=$GOPATH/bin
   PREPEND=$PREPEND:/usr/local/bin
+  PREPEND=$PREPEND:/usr/local/sbin
   PREPEND=$PREPEND:$HOME/.bin
   PREPEND=$PREPEND:/usr/local/heroku/bin
 
