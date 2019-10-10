@@ -3,6 +3,7 @@
 # General
 alias b='bundle exec'
 alias c='clear'
+alias d='docker'
 alias g='git'
 alias gr='grep -rn'
 alias grep='grep -I --color'

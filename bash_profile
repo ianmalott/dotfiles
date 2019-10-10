@@ -67,6 +67,11 @@ export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 # Enable completion for 'g' (git)
 complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null || complete -o default -o nospace -F _git g
 
+# Enable completion for 'd' (docker)
+# The _docker completion function is defined in /usr/local/etc/bash_completion.d/docker.
+# It was downloaded from https://github.com/docker/cli/blob/master/contrib/completion/bash/docker.
+complete -F _docker d
+
 # Enable completion for 'y' (yat.sh)
 complete -F _yat.sh y
 
