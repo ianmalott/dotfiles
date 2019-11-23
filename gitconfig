@@ -62,7 +62,7 @@
 [init]
   templatedir = ~/.gittemplates
 [merge]
-  conflictstyle = diff3
+  conflictstyle = merge # diff3 also shows the merge base
 [push]
   default = upstream
 [user]
