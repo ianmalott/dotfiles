@@ -169,6 +169,9 @@ map <leader>yg :YamlGoToKey
 map <leader>yp :YamlGetFullPath<CR>
 map <leader>yu :YamlGoToParent<CR>
 
+" Toggle NERDTree
+map <leader>nerd :NERDTreeToggle<CR>
+
 " Turn off search highlighting more easily
 nmap <silent> <leader>/ :nohlsearch<CR>
 
