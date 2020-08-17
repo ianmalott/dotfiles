@@ -10,7 +10,7 @@ set -e
 
 # Don't run ctags again if it's already running
 mkdir .git/tags_lock 2>/dev/null || exit 0
-trap "rmdir .git/tags_lock; rm .git/tags.$$" EXIT
+trap "rmdir .git/tags_lock; rm -f .git/tags.$$" EXIT
 
 ripper-tags -R -f .git/tags.$$ --tag-relative --exclude=.git
 mv .git/tags.$$ .git/tags
