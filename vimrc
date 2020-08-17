@@ -207,6 +207,9 @@ nnoremap <leader>rnu :set invrnu<CR>
 " Strip trailing whitespace
 nnoremap <leader>rstrip :call <SID>StripTrailingWhitespaces()<CR>
 
+" Toggle line wrapping
+nnoremap <leader>wrap :set wrap!<CR>
+
 " Search for visually-selected text by typing '*'
 vnoremap <silent> * :<C-U>
   \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
