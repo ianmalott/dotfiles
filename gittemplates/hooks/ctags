@@ -12,5 +12,5 @@ set -e
 mkdir .git/tags_lock 2>/dev/null || exit 0
 trap "rmdir .git/tags_lock; rm -f .git/tags.$$" EXIT
 
-ripper-tags -R -f .git/tags.$$ --tag-relative --exclude=.git
+ripper-tags -R -f .git/tags.$$ --tag-relative --exclude=.git --exclude=tmp --exclude=vendor
 mv .git/tags.$$ .git/tags
