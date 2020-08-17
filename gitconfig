@@ -35,7 +35,7 @@
   mb = merge-base
   mbm = merge-base master head
   p = pull
-  pup = !git push -u origin $(git bname) # push upstream
+  psup = !git push -u origin $(git bname) # push set upstream
   rbimbm = !git rebase -i $(git mbm)
   rbc = rebase --continue
   rbs = am --show-current-patch
