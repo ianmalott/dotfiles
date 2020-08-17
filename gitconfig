@@ -64,7 +64,7 @@
 [merge]
   conflictstyle = merge # diff3 also shows the merge base
 [push]
-  default = upstream
+  default = simple
 [user]
   name = Ian Malott
   email = ian@ianmalott.com
