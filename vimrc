@@ -54,6 +54,7 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""' " list files in C
 let g:gitgutter_enabled = 0 " disable GitGutter by default (toggle with <leader>ggt or :GitGutterToggle)
 let g:lightline = { 'colorscheme': 'solarized' } " use solarized colors for lightline
 let g:rails_ctags_arguments = "--exclude=tmp --exclude=vendor"
+let g:ruby_indent_hanging_elements = 0 " vim-ruby setting
 let g:Tlist_Ctags_Cmd="ripper-tags -R"
 let mapleader=',' " use comma as leader
 
