@@ -12,6 +12,7 @@
   ctags = !.git/hooks/ctags
   d = diff
   dc = diff --check
+  dcc = diff --color-words=. # character-by-character
   dcw = diff --color-words
   dno = diff --name-only
   ds = diff --staged
