@@ -43,6 +43,7 @@ if [[ -z $PATH_ALREADY_MODIFIED ]]; then
   PREPEND=$PREPEND:/usr/local/sbin
   PREPEND=$PREPEND:$HOME/.bin
   PREPEND=$PREPEND:/usr/local/heroku/bin
+  PREPEND=$PREPEND:/usr/local/share/git-core/contrib/diff-highlight
 
   PATH=$PREPEND:$PATH
   unset PREPEND

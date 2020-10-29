@@ -58,6 +58,7 @@
   frag = cyan
 [core]
   excludesfile = ~/.gitignore
+  pager = diff-highlight | less
 [diff]
   tool = vimdiff
 [init]
