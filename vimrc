@@ -13,7 +13,6 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'fatih/vim-go'
 Plug 'itchyny/lightline.vim'
 Plug 'kana/vim-textobj-user'
-Plug 'kien/ctrlp.vim'
 Plug 'lmeijvogel/vim-yaml-helper'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'rking/ag.vim'
@@ -49,8 +48,6 @@ runtime macros/matchit.vim
 ""
 "
 
-let g:ctrlp_match_window = 'results:100' " results often clipped if not increased past max height
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""' " list files in CtrlP with Ag
 let g:gitgutter_enabled = 0 " disable GitGutter by default (toggle with <leader>ggt or :GitGutterToggle)
 let g:lightline = { 'colorscheme': 'solarized' } " use solarized colors for lightline
 let g:rails_ctags_arguments = "--exclude=tmp --exclude=vendor"
