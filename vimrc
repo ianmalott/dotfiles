@@ -12,6 +12,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'elixir-lang/vim-elixir'
 Plug 'fatih/vim-go'
 Plug 'itchyny/lightline.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'kana/vim-textobj-user'
 Plug 'lmeijvogel/vim-yaml-helper'
 Plug 'nelstrom/vim-textobj-rubyblock'
@@ -176,6 +177,9 @@ nmap <silent> <leader>/ :nohlsearch<CR>
 
 " Toggle Git Gutter
 nmap <leader>ggt :GitGutterToggle<CR>
+
+" Search with FZF using ctrl-p mapping
+nmap <C-P> :FZF<CR>
 
 " Easier window navigation
 nnoremap <C-h> <C-w>h
