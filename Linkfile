@@ -5,6 +5,8 @@ gitconfig
 gitignore
 gittemplates
 irbrc
+overmind.env
+overmind.tmux.conf
 pryrc
 psqlrc
 screenrc
