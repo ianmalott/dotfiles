@@ -65,13 +65,13 @@ if which asdf > /dev/null; then source /usr/local/opt/asdf/asdf.sh; fi
 export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
-# Enable completion for 'g' (git)
-complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null || complete -o default -o nospace -F _git g
-
 # Enable completion for 'd' (docker)
 # The _docker completion function is defined in /usr/local/etc/bash_completion.d/docker.
 # It was downloaded from https://github.com/docker/cli/blob/master/contrib/completion/bash/docker.
 complete -F _docker d
+
+# Enable completion for 'g' (git)
+__git_complete g __git_main
 
 # Enable completion for 'y' (yat.sh)
 complete -F _yat.sh y
