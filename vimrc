@@ -7,9 +7,9 @@ set nocompatible " enable vim-specific options
 call plug#begin('~/.vim/plugged')
 Plug 'DataWraith/auto_mkdir'
 Plug 'airblade/vim-gitgutter'
-Plug 'altercation/vim-colors-solarized'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'elixir-lang/vim-elixir'
+Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 Plug 'fatih/vim-go'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -50,7 +50,7 @@ runtime macros/matchit.vim
 "
 
 let g:gitgutter_enabled = 0 " disable GitGutter by default (toggle with <leader>ggt or :GitGutterToggle)
-let g:lightline = { 'colorscheme': 'solarized' } " use solarized colors for lightline
+let g:lightline = { 'colorscheme': 'embark' } " use solarized colors for lightline
 let g:rails_ctags_arguments = "--exclude=tmp --exclude=vendor"
 let g:ruby_indent_hanging_elements = 0 " vim-ruby setting
 let g:Tlist_Ctags_Cmd="ripper-tags -R"
@@ -65,7 +65,6 @@ let mapleader=',' " use comma as leader
 "
 
 set   autoindent
-set   background=dark " used by solarized color scheme
 set   backspace=indent,eol,start " backspace over these
 set nobackup
 set nocindent " c-style indenting
@@ -103,6 +102,7 @@ set noswapfile
 set   t_BE= " disable bracketed paste mode to prevent <PasteStart>pasted<PasteEnd>
 set   tabpagemax=15 " max number of tabs
 set   tabstop=2 " tab size
+set   termguicolors " required for embark color scheme
 set   updatetime=250 " write to swap after 250ms idle (default: 4000ms)
 set novisualbell " don't blink the screen when there is an error
 set   wildmenu " display options for tab completion in command mode
@@ -116,7 +116,7 @@ set   wildmode=list:longest " tab completion up to point of ambiguity
 ""
 "
 
-colorscheme solarized
+colorscheme embark
 syn on " automatic syntax hilighting
 hi cursorlinenr cterm=none
 hi statusline ctermbg=green ctermfg=black cterm=none
