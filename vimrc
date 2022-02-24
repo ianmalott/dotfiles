@@ -13,6 +13,7 @@ Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 Plug 'fatih/vim-go'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'lmeijvogel/vim-yaml-helper'
 Plug 'nelstrom/vim-textobj-rubyblock'
