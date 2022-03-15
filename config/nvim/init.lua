@@ -12,7 +12,7 @@ require('plugins')
 ----
 --
 
-vim.cmd('source ./legacy/abbreviations.vim')
+vim.cmd('source ~/.config/nvim/legacy/abbreviations.vim')
 
 --
 ----
@@ -22,7 +22,7 @@ vim.cmd('source ./legacy/abbreviations.vim')
 ----
 --
 
-vim.cmd('source ./legacy/colors.vim')
+vim.cmd('source ~/.config/nvim/legacy/colors.vim')
 
 --
 ----
@@ -84,7 +84,7 @@ vim.opt.wildmode = 'list:longest' -- tab completion up to point of ambiguity
 ----
 --
 
-vim.cmd('source ./legacy/mappings.vim')
+vim.cmd('source ~/.config/nvim/legacy/mappings.vim')
 
 --
 ----
