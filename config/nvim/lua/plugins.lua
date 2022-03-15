@@ -12,6 +12,10 @@ you must run `PackerCompile` or `PackerSync`.
 
 --]]
 
+function config(name)
+  return string.format([[require("config/%s")]], name)
+end
+
 return require('packer').startup(function (use)
   -- Manage packer with packer
   use 'wbthomason/packer.nvim'
@@ -58,5 +62,9 @@ return require('packer').startup(function (use)
       { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
       { 'sharkdp/fd' },
     }
+  }
+  use { 'nvim-treesitter/nvim-treesitter',
+    config = config('nvim-treesitter'),
+    run = ':TSUpdate'
   }
 end)
