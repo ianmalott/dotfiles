@@ -1,6 +1,7 @@
 bash_profile
 bashrc
 bin
+config/nvim
 gitconfig
 gitignore
 gittemplates
