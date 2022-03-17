@@ -12,8 +12,8 @@ you must run `PackerCompile` or `PackerSync`.
 
 --]]
 
-function config(name)
-  return string.format([[require("config/%s")]], name)
+function after_load(name)
+  return string.format([[require("after_load/%s")]], name)
 end
 
 return require('packer').startup(function (use)
@@ -57,12 +57,13 @@ return require('packer').startup(function (use)
   -- Neovim
   use { 'neovim/nvim-lspconfig' }
   use { 'williamboman/nvim-lsp-installer',
-    config = config('nvim-lsp-installer'),
+    config = after_load('nvim-lsp-installer'),
     requires = {
       { 'neovim/nvim-lspconfig' }
     },
   }
   use { 'nvim-telescope/telescope.nvim',
+    config = after_load('telescope.nvim'),
     requires = {
       { 'BurntSushi/ripgrep' },
       { 'nvim-lua/plenary.nvim' },
@@ -71,7 +72,7 @@ return require('packer').startup(function (use)
     }
   }
   use { 'nvim-treesitter/nvim-treesitter',
-    config = config('nvim-treesitter'),
+    config = after_load('nvim-treesitter'),
     run = ':TSUpdate'
   }
 end)
