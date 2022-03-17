@@ -55,6 +55,13 @@ return require('packer').startup(function (use)
   use { 'vim-ruby/vim-ruby', ft = 'ruby' }
 
   -- Neovim
+  use { 'neovim/nvim-lspconfig' }
+  use { 'williamboman/nvim-lsp-installer',
+    config = config('nvim-lsp-installer'),
+    requires = {
+      { 'neovim/nvim-lspconfig' }
+    },
+  }
   use { 'nvim-telescope/telescope.nvim',
     requires = {
       { 'BurntSushi/ripgrep' },
