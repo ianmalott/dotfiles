@@ -1,35 +1,23 @@
------- Plugins {{{
-----
+--
+-- Plugins
 --
 
 require('plugins')
 
 --
-----
------- }}}
-
------- Abbreviations {{{
-----
+-- Abbreviations
 --
 
 vim.cmd('source ~/.config/nvim/legacy/abbreviations.vim')
 
 --
-----
------- }}}
-
------- Colors {{{
-----
+-- Colors
 --
 
 vim.cmd('source ~/.config/nvim/legacy/colors.vim')
 
 --
-----
------- }}}
-
------- Variables {{{
-----
+-- Variables
 --
 
 vim.g.gitgutter_enabled = 0 -- disabled by default (toggle with <leader>ggt)
@@ -38,11 +26,7 @@ vim.g.rails_ctags_arguments = '--exclude=tmp --exclude=vendor'
 vim.g.ruby_indent_hanging_elements = 0 -- vim-ruby setting
 
 --
-----
------- }}}
-
------- Options {{{
-----
+-- Options
 --
 
 vim.opt.backup = false
@@ -77,18 +61,7 @@ vim.opt.visualbell = false -- don't blink the screen when there is an error
 vim.opt.wildmode = 'list:longest' -- tab completion up to point of ambiguity
 
 --
-----
------- }}}
-
------- Mappings {{{
-----
+-- Mappings
 --
 
 vim.cmd('source ~/.config/nvim/legacy/mappings.vim')
-
---
-----
------- }}}
-
-
--- vim:foldmethod=marker:foldlevel=0

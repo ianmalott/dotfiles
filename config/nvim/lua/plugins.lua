@@ -1,4 +1,4 @@
---[[ Packer quick reference
+--[[ Packer
 
 Whenever you make changes to your plugin configuration,
 you must run `PackerCompile` or `PackerSync`.
