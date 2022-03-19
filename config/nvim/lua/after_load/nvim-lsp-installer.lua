@@ -54,7 +54,7 @@ local custom_server_options = {
   ["elixirls"] = function (options)
     options.settings = {
       elixirLS = {
-        dialyzerFormat = 'dialyzer'
+        dialyzerEnabled = false
       }
     }
   end,
