@@ -34,6 +34,12 @@ fi
 
 
 #
+# Initialize asdf version manager
+. "$HOME/.asdf/asdf.sh"
+. "$HOME/.asdf/completions/asdf.bash"
+
+
+#
 # PATH
 #
 
@@ -50,11 +56,6 @@ if [[ -z $PATH_ALREADY_MODIFIED ]]; then
 
   PATH_ALREADY_MODIFIED=true # Prevent duplicates in PATH when using Tmux
 fi
-
-# Initialize asdf version manager
-# Add ASDF_BIN and ASDF_USER_SHIMS to front of PATH
-if which asdf > /dev/null; then source /usr/local/opt/asdf/asdf.sh; fi
-
 
 #
 # Completion
