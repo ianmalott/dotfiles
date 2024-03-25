@@ -8,7 +8,7 @@
   back = checkout -
   cm = commit
   co = checkout
-  com = checkout master
+  com = checkout main
   ctags = !.git/hooks/ctags
   d = diff
   dc = diff --check
@@ -21,20 +21,20 @@
   f = fetch
   ff = merge --ff-only
   ffu = !git ff $(git upstream)
-  files = diff --name-only master...head
-  filesacmr = diff --name-only master...head --diff-filter=ACMR
-  filescp = !git diff --name-only master...head | pbcopy
+  files = diff --name-only main...head
+  filesacmr = diff --name-only main...head --diff-filter=ACMR
+  filescp = !git diff --name-only main...head | pbcopy
   head = log -1
   l = log --no-decorate
   l1 = l -1
-  lb = l --oneline master..
+  lb = l --oneline main..
   lg = log --graph --pretty=format:'%C(yellow)%h%Creset %s %C(cyan)%d %C(black) %an, %cr%Creset'
-  ll = log -p master.. .
-  llc = log -p --color-words master.. .
+  ll = log -p main.. .
+  llc = log -p --color-words main.. .
   lo = l --oneline
   ls = l --oneline -n20
   mb = merge-base
-  mbm = merge-base master head
+  mbm = merge-base main head
   p = pull
   psup = !git push -u origin $(git bname) # push set upstream
   rbimbm = !git rebase -i $(git mbm)
