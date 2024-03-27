@@ -7,7 +7,7 @@ echo "Sourcing $BASH_SOURCE"
 # Environment
 #
 
-export EDITOR=vim
+export EDITOR=nvim
 export GOPATH=~/projects/go
 export PROJECTS_DIR=~/projects
 export TERM=xterm-256color

@@ -1,5 +1,20 @@
 #!/usr/bin/env bash
 
+# Edit + Ag: edit files containing a match and highlight those matches
+function eag {
+  if [ $# -ge 1 ]; then
+    local matching_files=$(ag -l "$@")
+
+    if [ "$matching_files" ]; then
+      $EDITOR -p +/"$1" $matching_files
+    else
+      echo 'No matches found.'
+    fi
+  else
+    echo 'Usage: eag <pattern> [<path>...]'
+  fi
+}
+
 # Project-specific screen sessions
 function s {
   local project=$1
@@ -45,19 +60,4 @@ function tm {
     echo -e "\n\n$filename\n";
     t $filename;
   done
-}
-
-# Vim + Ag: open files containing a match and highlight those matches
-function vag {
-  if [ $# -ge 1 ]; then
-    local matching_files=$(ag -l "$@")
-
-    if [ "$matching_files" ]; then
-      vim -p +/"$1" $matching_files
-    else
-      echo 'No matches found.'
-    fi
-  else
-    echo 'Usage: vag <pattern> [<path>...]'
-  fi
 }

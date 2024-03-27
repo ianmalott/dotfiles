@@ -39,7 +39,7 @@ function open_texts () {
     fi
   fi
 
-  vim -p $files
+  $EDITOR -p $files
 }
 
 open_texts $1
