@@ -9,6 +9,7 @@ echo "Sourcing $BASH_SOURCE"
 
 export EDITOR=nvim
 export GOPATH=~/projects/go
+export KERL_BUILD_DOCS=yes # Enable kerl to build Erlang docs on asdf install
 export PROJECTS_DIR=~/projects
 export TERM=xterm-256color
 export TEXTS_DIR=~/texts
