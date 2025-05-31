@@ -1,0 +1,27 @@
+format = """
+$username[@](blue)$hostname $directory$git_branch $git_status
+$character
+"""
+
+[character]
+success_symbol = '[\$](blue)'
+
+[directory]
+style = 'blue'
+
+[git_branch]
+format = '[$branch(:$remote_branch)]($style)'
+style = 'bold blue'
+
+[git_status]
+format = '([$all_status$ahead_behind]($style))'
+style = 'bold blue'
+
+[hostname]
+format = '[$hostname]($style)'
+ssh_only = false
+style = 'bold black'
+
+[username]
+format = '[$user]($style)'
+show_always = true
