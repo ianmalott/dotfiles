@@ -2,6 +2,7 @@
 alias dotfiles='cd ~/.dotfiles'
 alias g='git'
 alias ls='ls -Gp'
+alias n='nvim'
 
 # Initialize completion
 autoload -U compinit; compinit
