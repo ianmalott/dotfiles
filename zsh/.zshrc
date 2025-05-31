@@ -10,3 +10,6 @@ compdef _git g
 
 # Initialize starship prompt
 eval "$(starship init zsh)"
+
+# Initialize zoxide
+eval "$(zoxide init zsh)"
